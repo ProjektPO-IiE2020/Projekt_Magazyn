@@ -10,7 +10,6 @@ namespace Magazyn
     {
         static void Main(string[] args)
         {
-            Console.Write("Helo");
         }
     }
 }
