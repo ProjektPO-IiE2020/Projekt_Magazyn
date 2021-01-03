@@ -10,9 +10,6 @@ namespace Magazyn
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello siema BONŻUR");
-            Console.WriteLine("ELO ELO 320");
-            Console.WriteLine("Witam witam");
         }
     }
 }
