@@ -43,13 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMagazynuje.cs" />
     <Compile Include="Magazyn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\IMagazynuje.cs" />
-    <Compile Include="Properties\Towar.cs" />
-    <Compile Include="Properties\TowarPromocyjny.cs" />
+    <Compile Include="Towar.cs" />
     <Compile Include="TowarNotFoundException.cs" />
+    <Compile Include="TowarPromocyjny.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

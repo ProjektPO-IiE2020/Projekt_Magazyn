@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Magazyn.Properties
 {
     [Serializable]
-    class Towar : IComparable<Towar>, IEquatable<Towar>
+    public class Towar : IComparable<Towar>, IEquatable<Towar>
     {
         private string _kod;
         string _nazwa;

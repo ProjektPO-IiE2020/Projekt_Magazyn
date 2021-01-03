@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 namespace Magazyn.Properties
 {
     [Serializable]
-    class TowarPromocyjny : Towar
+    public class TowarPromocyjny : Towar
     {
-
         double _obnizkaProcent;
         static int _ostatniKodPromocyjny;
         static TowarPromocyjny()
@@ -36,5 +35,4 @@ namespace Magazyn.Properties
             return $"{base.ToString()} {_obnizkaProcent}%";
         }
     }
-    
 }

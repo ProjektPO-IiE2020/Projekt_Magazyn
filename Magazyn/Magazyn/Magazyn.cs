@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 namespace Magazyn
 {
     [Serializable]
-    class Magazyn : IMagazynuje
+    public class Magazyn : IMagazynuje
     {
         string nazwa;
         int iloscTowarow;
