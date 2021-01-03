@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Magazyn
 {
+    [Serializable]
+    public enum Typy { inne};
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello siema BONŻUR");
-            Console.WriteLine("ELO ELO 320");
         }
     }
 }
