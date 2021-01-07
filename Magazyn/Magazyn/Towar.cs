@@ -53,8 +53,9 @@ namespace Magazyn.Properties
             _nazwa = nazwa;
             _typ = typ;
             _cena = cena;
-            DateTime.TryParseExact(dataProdukcji, new[] { ​​"yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy" }​​, null, DateTimeStyles.None, out _dataProdukcji);
-            DateTime.TryParseExact(dataPrzydatnosci, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy" }​​, null, DateTimeStyles.None, out _dataPrzydatnosci);
+            DateTime.TryParseExact(dataProdukcji, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy" }, null, DateTimeStyles.None, out _dataProdukcji);
+            DateTime.TryParseExact(dataPrzydatnosci, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy" }, null, DateTimeStyles.None, out _dataPrzydatnosci);
+
             _waga = waga;
         }
 
