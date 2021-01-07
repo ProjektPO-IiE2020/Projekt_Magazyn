@@ -17,9 +17,6 @@ namespace Magazyn.Properties
         static int _ostatniKod;
         DateTime _dataProdukcji;
         DateTime _dataPrzydatnosci;
-        private string v1;
-        private object kosmetyki;
-        private int v2;
 
         public string Kod { get => _kod; set => _kod = value; }
         public string Nazwa { get => _nazwa; set => _nazwa = value; }
@@ -52,13 +49,6 @@ namespace Magazyn.Properties
             _cena = cena;
             DateTime.TryParseExact(dataProdukcji, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy" }, null, DateTimeStyles.None, out _dataProdukcji);
             DateTime.TryParseExact(dataPrzydatnosci, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy" }, null, DateTimeStyles.None, out _dataPrzydatnosci);
-        }
-
-        public Towar(string v1, object kosmetyki, int v2)
-        {
-            this.v1 = v1;
-            this.kosmetyki = kosmetyki;
-            this.v2 = v2;
         }
 
         public override string ToString()

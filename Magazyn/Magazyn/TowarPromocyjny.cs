@@ -19,7 +19,7 @@ namespace Magazyn.Properties
         {
 
         }
-        public TowarPromocyjny(string nazwa, Typy typ, double cena, double obnizkaProcent) : base(nazwa, typ, cena)
+        public TowarPromocyjny(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci, double obnizkaProcent) : base(nazwa, typ, cena, dataProdukcji, dataPrzydatnosci)
         {
             --OstatniKod;
             ++_ostatniKodPromocyjny;
