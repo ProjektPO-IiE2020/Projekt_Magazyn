@@ -13,7 +13,7 @@ namespace Magazyn
     {
         static void Main(string[] args)
         {
-            Towar p1 = new Towar("Sukienka", Typy.mięso, 10);
+            Towar p1 = new Towar("Pepsi", Typy.napoje, 1.99, "21.10.2020", "21.03.2021");
             Towar p2 = new Towar("Dlugopis", Typy.inne, 3);
             Towar p3 = new Towar("Nivea", Typy.owoce, 111);
             Console.WriteLine(p1);

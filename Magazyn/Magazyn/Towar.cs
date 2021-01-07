@@ -17,7 +17,6 @@ namespace Magazyn.Properties
         static int _ostatniKod;
         DateTime _dataProdukcji;
         DateTime _dataPrzydatnosci;
-        double _waga;
         private string v1;
         private object kosmetyki;
         private int v2;
@@ -29,7 +28,6 @@ namespace Magazyn.Properties
         public static int OstatniKod { get => _ostatniKod; set => _ostatniKod = value; }
         public DateTime DataProdukcji { get => _dataProdukcji; set => _dataProdukcji = value; }
         public DateTime DataPrzydatnosci { get => _dataPrzydatnosci; set => _dataPrzydatnosci = value; }
-        public double Waga { get => _waga; set => _waga = value; }
 
         static Towar()
         {
@@ -45,9 +43,8 @@ namespace Magazyn.Properties
             _cena = 0;
             _dataProdukcji = DateTime.MinValue;
             _dataProdukcji = DateTime.MinValue;
-            _waga = 0;
         }
-        public Towar(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci, double waga) : this()
+        public Towar(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci) : this()
         {
             _kod = $"{_ostatniKod}-PS";
             _nazwa = nazwa;
@@ -55,8 +52,6 @@ namespace Magazyn.Properties
             _cena = cena;
             DateTime.TryParseExact(dataProdukcji, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy" }, null, DateTimeStyles.None, out _dataProdukcji);
             DateTime.TryParseExact(dataPrzydatnosci, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy" }, null, DateTimeStyles.None, out _dataPrzydatnosci);
-
-            _waga = waga;
         }
 
         public Towar(string v1, object kosmetyki, int v2)
