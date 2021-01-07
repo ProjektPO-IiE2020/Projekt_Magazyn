@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 namespace Magazyn
 {
     [Serializable]
-    public class Magazyn : IMagazynuje
+    public class Magazyn : IMagazynuje, ICloneable
     {
         string nazwa;
         int iloscTowarow;
@@ -82,22 +82,22 @@ namespace Magazyn
             return f;
         }
 
-        public Towar ZnajdzTowar(string kod)
+       
+        public List<Towar> ZnajdzTowar(Typy typ)
         {
-            Towar t = new Towar();
-            bool f = false;
-            foreach (Towar tow in _kolejkaTowaru)
+            List<Towar> lista = new List<Towar>();
+            foreach (Towar t in _kolejkaTowaru)
             {
-                if (tow.Kod.Equals(kod))
+                if (t.Typ == typ)
                 {
-                    t = tow;
-                    f = true;
+                    lista.Add(t);
                 }
             }
-            if (!f)
-                throw new TowarNotFoundException();
-            return t;
-
+            if (lista.Count != 0)
+            {
+                return lista;
+            }
+            return null;
         }
 
         public List<TowarPromocyjny> ZnajdzTowaryPromocyjne()
@@ -153,6 +153,16 @@ namespace Magazyn
             return m;
         }
 
+        public object Clone()
+        {
+            Magazyn nowaFaktura = new Magazyn();
+            foreach (Towar t in _kolejkaTowaru)
+            {
+                nowaFaktura._kolejkaTowaru.Enqueue(t.Clone());
+            }
+            return nowaFaktura;
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -163,6 +173,7 @@ namespace Magazyn
             }
             return sb.ToString();
         }
+
     }
 }
 
