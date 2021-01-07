@@ -48,8 +48,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Towar.cs" />
+    <Compile Include="TowarExport.cs" />
     <Compile Include="TowarNotFoundException.cs" />
-    <Compile Include="TowarPromocyjny.cs" />
+    <Compile Include="TowarImport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

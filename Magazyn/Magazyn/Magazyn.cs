@@ -71,7 +71,7 @@ namespace Magazyn
         {
             Queue<Towar> nowa = new Queue<Towar>();
             bool f = false;
-            foreach (Towar t in _kolejkaTowaru)
+            foreach (TowarEksport t in _kolejkaTowaru)
             {
                 if (!t.Kod.Equals(kod))
                     nowa.Enqueue(t);
@@ -100,13 +100,23 @@ namespace Magazyn
             return null;
         }
 
-        public List<TowarPromocyjny> ZnajdzTowaryPromocyjne()
+        public List<TowarEksport> ZnajdzTowaryEksport()
         {
-            List<TowarPromocyjny> list = new List<TowarPromocyjny>();
+            List<TowarEksport> list = new List<TowarEksport>();
             foreach (Towar p in _kolejkaTowaru)
             {
-                if (p is TowarPromocyjny)
-                    list.Add((TowarPromocyjny)p);
+                if (p is TowarEksport)
+                    list.Add((TowarEksport)p);
+            }
+            return list.Count == 0 ? null : list;
+        }
+        public List<TowarImport> ZnajdzTowaryImport()
+        {
+            List<TowarImport> list = new List<TowarImport>();
+            foreach (Towar p in _kolejkaTowaru)
+            {
+                if (p is TowarImport)
+                    list.Add((TowarImport)p);
             }
             return list.Count == 0 ? null : list;
         }

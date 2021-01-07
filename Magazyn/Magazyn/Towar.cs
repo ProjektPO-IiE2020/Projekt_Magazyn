@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 namespace Magazyn
 {
     [Serializable]
-    public class Towar : IComparable<Towar>, IEquatable<Towar>
+    public abstract class Towar : IComparable<Towar>, IEquatable<Towar>
     {
-        private string _kod;
         string _nazwa;
         Typy _typ;
         double _cena;
@@ -18,7 +17,6 @@ namespace Magazyn
         DateTime _dataProdukcji;
         DateTime _dataPrzydatnosci;
 
-        public string Kod { get => _kod; set => _kod = value; }
         public string Nazwa { get => _nazwa; set => _nazwa = value; }
         public Typy Typ { get => _typ; set => _typ = value; }
         public double Cena { get => _cena; set => _cena = value; }
@@ -33,8 +31,6 @@ namespace Magazyn
 
         public Towar()
         {
-            ++_ostatniKod;
-            _kod = null;
             _nazwa = null;
             _typ = Typy.inne;
             _cena = 0;
@@ -43,7 +39,6 @@ namespace Magazyn
         }
         public Towar(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci) : this()
         {
-            _kod = $"{_ostatniKod}-PS";
             _nazwa = nazwa;
             _typ = typ;
             _cena = cena;
@@ -53,7 +48,7 @@ namespace Magazyn
 
         public override string ToString()
         {
-            return $"{_kod}: {_nazwa}, {_typ}  ({_cena:C})";
+            return $"{_nazwa}, {_typ}  ({_cena:C})";
         }
 
         public int CompareTo(Towar other)

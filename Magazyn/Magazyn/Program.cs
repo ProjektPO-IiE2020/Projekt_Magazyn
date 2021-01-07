@@ -9,20 +9,21 @@ namespace Magazyn
 {
     [Serializable]
     public enum Typy {napoje, warzywa, owoce, mięso, słodycze, inne};
+    public enum Kraje {Brazylia, Norwegia, Egipt, Rosja, Niemcy, Hiszpania};
     class Program
     {
         static void Main(string[] args)
         {
-            Towar p1 = new Towar("Pepsi", Typy.napoje, 1.99, "21.10.2020", "21.03.2021");
-            Towar p2 = new Towar("Dlugopis", Typy.inne, 3);
-            Towar p3 = new Towar("Nivea", Typy.owoce, 111);
+            TowarEksport p1 = new TowarEksport("Pepsi", Typy.napoje, 1.99, "21.10.2020", "21.03.2021");
+            TowarEksport p2 = new TowarEksport("Dlugopis", Typy.inne, 1.99, "21.10.2020", "21.03.2021");
+            TowarEksport p3 = new TowarEksport("Nivea", Typy.owoce, 1.99, "21.10.2020", "21.03.2021");
             Console.WriteLine(p1);
             Console.WriteLine(p2);
             Console.WriteLine(p3);
 
-            TowarPromocyjny pp1 = new TowarPromocyjny("Buty", Typy.warzywa, 10, 400);
-            TowarPromocyjny pp2 = new TowarPromocyjny("Inne buty", Typy.napoje, 2, 30);
-            TowarPromocyjny pp3 = new TowarPromocyjny("inne inne", Typy.inne, 8, 15.5);
+            TowarImport pp1 = new TowarImport("Buty", Typy.warzywa, 1.99, "21.10.2020", "21.03.2021");
+            TowarImport pp2 = new TowarImport("Inne buty", Typy.napoje, 1.99, "21.10.2020", "21.03.2021");
+            TowarImport pp3 = new TowarImport("inne inne", Typy.inne, 1.99, "21.10.2020", "21.03.2021");
             Console.WriteLine();
             Console.WriteLine(pp1);
             Console.WriteLine(pp2);
@@ -49,8 +50,8 @@ namespace Magazyn
             foreach (var v in lista)
                 Console.WriteLine(v);
             Console.WriteLine();
-            List<TowarPromocyjny> lista1 = new List<TowarPromocyjny>();
-            lista1 = magazyn.ZnajdzTowaryPromocyjne();
+            List<TowarEksport> lista1 = new List<TowarEksport>();
+            lista1 = magazyn.ZnajdzTowaryEksport();
             foreach (var v in lista1)
                 Console.WriteLine(v);
             Console.WriteLine();
