@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Magazyn.Properties
+namespace Magazyn
 {
     [Serializable]
     public class TowarPromocyjny : Towar

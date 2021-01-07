@@ -1,4 +1,4 @@
-﻿using Magazyn.Properties;
+﻿using Magazyn;
 using System;
 using System.Collections.Generic;
 using System.Linq;
