@@ -13,21 +13,16 @@ namespace Magazyn
         string _nazwa;
         Typy _typ;
         double _cena;
-        static int _ostatniKod;
         DateTime _dataProdukcji;
         DateTime _dataPrzydatnosci;
 
         public string Nazwa { get => _nazwa; set => _nazwa = value; }
         public Typy Typ { get => _typ; set => _typ = value; }
         public double Cena { get => _cena; set => _cena = value; }
-        public static int OstatniKod { get => _ostatniKod; set => _ostatniKod = value; }
         public DateTime DataProdukcji { get => _dataProdukcji; set => _dataProdukcji = value; }
         public DateTime DataPrzydatnosci { get => _dataPrzydatnosci; set => _dataPrzydatnosci = value; }
 
-        static Towar()
-        {
-            _ostatniKod = 0;
-        }
+       
 
         public Towar()
         {
@@ -61,9 +56,6 @@ namespace Magazyn
             return (_nazwa.Equals(other.Nazwa) && _typ.Equals(other._typ));
         }
 
-        internal Towar Clone()
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

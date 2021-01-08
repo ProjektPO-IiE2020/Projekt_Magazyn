@@ -100,26 +100,17 @@ namespace Magazyn
             return null;
         }
 
-        public List<TowarEksport> ZnajdzTowaryEksport()
+        public List<Towar> ZnajdzTowar()
         {
-            List<TowarEksport> list = new List<TowarEksport>();
+            List<Towar> list = new List<Towar>();
             foreach (Towar p in _kolejkaTowaru)
             {
-                if (p is TowarEksport)
-                    list.Add((TowarEksport)p);
+                if (p is Towar)
+                    list.Add((Towar)p);
             }
             return list.Count == 0 ? null : list;
         }
-        public List<TowarImport> ZnajdzTowaryImport()
-        {
-            List<TowarImport> list = new List<TowarImport>();
-            foreach (Towar p in _kolejkaTowaru)
-            {
-                if (p is TowarImport)
-                    list.Add((TowarImport)p);
-            }
-            return list.Count == 0 ? null : list;
-        }
+      
 
         public void SortujPoCenie()
         {
@@ -165,12 +156,12 @@ namespace Magazyn
 
         public object Clone()
         {
-            Magazyn nowaFaktura = new Magazyn();
+            Magazyn nowyMagazyn = new Magazyn();
             foreach (Towar t in _kolejkaTowaru)
             {
-                nowaFaktura._kolejkaTowaru.Enqueue(t.Clone());
+                nowyMagazyn._kolejkaTowaru.Enqueue((Magazyn)t.Clone());
             }
-            return nowaFaktura;
+            return nowyMagazyn;
         }
 
         public override string ToString()
