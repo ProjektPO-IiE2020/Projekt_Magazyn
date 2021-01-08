@@ -13,17 +13,20 @@ namespace Magazyn
         string _kod;
         Kraje _kraj;
         public string Kod { get => _kod; set => _kod = value; }
+
         static TowarEksport()
         {
-            _doKodu = 100;
+            _doKodu = 1000;
         }
+
         public TowarEksport() : base()
         {
         }
+
         public TowarEksport(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci, Kraje kraj) : base(nazwa, typ, cena, dataProdukcji, dataPrzydatnosci)
         {
             _kraj = kraj;
-            _kod = $"{++_doKodu}/{kraj.ToString().Substring(0, 2).ToUpper()}/E";
+            _kod = $"{++_doKodu}/{kraj.ToString().Substring(0, 3).ToUpper()}/EX";
         }
 
 

@@ -13,5 +13,11 @@ namespace Magazyn
         void Wyczysc();
         int PodajIlosc();
         Towar PodajBiezacy();
+        bool UsunTowar(string kod);
+        List<Towar> ZnajdzTowar(Typy typ);
+        Towar ZnajdzTowarImport(string kod);
+        Towar ZnajdzTowarEksport(string kod);
+        void SortujPoCenie();
+        void SortujPoNazwie(bool f);
     }
 }

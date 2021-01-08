@@ -22,7 +22,6 @@ namespace Magazyn
         public DateTime DataProdukcji { get => _dataProdukcji; set => _dataProdukcji = value; }
         public DateTime DataPrzydatnosci { get => _dataPrzydatnosci; set => _dataPrzydatnosci = value; }
 
-       
 
         public Towar()
         {
@@ -37,13 +36,13 @@ namespace Magazyn
             _nazwa = nazwa;
             _typ = typ;
             _cena = cena;
-            DateTime.TryParseExact(dataProdukcji, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy" }, null, DateTimeStyles.None, out _dataProdukcji);
-            DateTime.TryParseExact(dataPrzydatnosci, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy" }, null, DateTimeStyles.None, out _dataPrzydatnosci);
+            DateTime.TryParseExact(dataProdukcji, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy", "dd.MM.yyyy" }, null, DateTimeStyles.None, out _dataProdukcji);
+            DateTime.TryParseExact(dataPrzydatnosci, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy", "dd.MM.yyyy" }, null, DateTimeStyles.None, out _dataPrzydatnosci);
         }
 
         public override string ToString()
         {
-            return $"{_nazwa}, {_typ}  ({_cena:C})";
+            return $"{_nazwa}, {_typ} ({_cena:C}, data produkcji: {_dataProdukcji}, data przydatności: {_dataPrzydatnosci})";
         }
 
         public int CompareTo(Towar other)
@@ -55,7 +54,10 @@ namespace Magazyn
         {
             return (_nazwa.Equals(other.Nazwa) && _typ.Equals(other._typ));
         }
+        internal Towar Clone()
+        {
+            return (Towar)MemberwiseClone();
+        }
 
-      
     }
 }

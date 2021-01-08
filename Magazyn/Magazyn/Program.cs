@@ -8,27 +8,28 @@ using System.Threading.Tasks;
 namespace Magazyn
 {
     [Serializable]
-    public enum Typy {napoje, warzywa, owoce, mięso, słodycze, inne};
+    public enum Typy {napoje, warzywa, owoce, mięso, słodycze, chemia, inne};
     public enum Kraje {Brazylia, Norwegia, Egipt, Rosja, Niemcy, Hiszpania};
     class Program
     {
         static void Main(string[] args)
         {
-            TowarEksport p1 = new TowarEksport("Pepsi", Typy.napoje, 1.99, "21.10.2020", "21.03.2021");
-            TowarEksport p2 = new TowarEksport("Dlugopis", Typy.inne, 1.99, "21.10.2020", "21.03.2021");
-            TowarEksport p3 = new TowarEksport("Nivea", Typy.owoce, 1.99, "21.10.2020", "21.03.2021");
+            TowarEksport p1 = new TowarEksport("Pepsi", Typy.napoje, 1.99, "21.10.2020", "12.03.2021", Kraje.Rosja);
+            TowarEksport p2 = new TowarEksport("Długopis", Typy.inne, 1.99, "12.11.2020", "22.03.2021", Kraje.Hiszpania);
+            TowarEksport p3 = new TowarEksport("Jabłka", Typy.owoce, 1.99, "03.03.2020", "08.02.2021", Kraje.Norwegia);
             Console.WriteLine(p1);
             Console.WriteLine(p2);
             Console.WriteLine(p3);
 
-            TowarImport pp1 = new TowarImport("Buty", Typy.warzywa, 1.99, "21.10.2020", "21.03.2021");
-            TowarImport pp2 = new TowarImport("Inne buty", Typy.napoje, 1.99, "21.10.2020", "21.03.2021");
-            TowarImport pp3 = new TowarImport("inne inne", Typy.inne, 1.99, "21.10.2020", "21.03.2021");
+            TowarImport pp1 = new TowarImport("Ziemniaki", Typy.warzywa, 1.99, "13.06.2020", "11.03.2021", Kraje.Egipt);
+            TowarImport pp2 = new TowarImport("Sok pomarańczowy", Typy.napoje, 1.99, "26.12.2020", "21.02.2021", Kraje.Brazylia);
+            TowarImport pp3 = new TowarImport("Proszek do prania", Typy.chemia, 1.99, "07.02.2020", "15.03.2021", Kraje.Niemcy);
             Console.WriteLine();
             Console.WriteLine(pp1);
             Console.WriteLine(pp2);
             Console.WriteLine(pp3);
             Console.WriteLine();
+
             Magazyn magazyn = new Magazyn();
             magazyn.Umiesc(pp1);
             magazyn.Umiesc(pp2);
@@ -39,9 +40,15 @@ namespace Magazyn
             Console.WriteLine(magazyn.ToString());
 
             Console.WriteLine(p1.Kod);
+
+
+
+            Console.WriteLine("********************************************************************************************************");
             magazyn.UsunTowar(p1.Kod);
             Console.WriteLine();
+
             Console.WriteLine(magazyn.ToString());
+            
             Console.WriteLine();
 
             Console.WriteLine();
@@ -50,10 +57,12 @@ namespace Magazyn
             foreach (var v in lista)
                 Console.WriteLine(v);
             Console.WriteLine();
-            List<TowarEksport> lista1 = new List<TowarEksport>();
-            lista1 = magazyn.ZnajdzTowaryEksport();
+            /*List<Towar> lista1 = new List<Towar>();
+            string kod = "1001/ROS/EX";
+
+            lista1 = magazyn.ZnajdzTowarEksport(kod);
             foreach (var v in lista1)
-                Console.WriteLine(v);
+                Console.WriteLine(v);*/
             Console.WriteLine();
             magazyn.SortujPoCenie();
             Console.WriteLine(magazyn.ToString());
@@ -80,6 +89,7 @@ namespace Magazyn
             Console.WriteLine();
             ls2 = Magazyn.OdczytajXML("Zapisany.xml");
             Console.WriteLine(ls2.ToString());
+
             Console.ReadKey();
         }
     }

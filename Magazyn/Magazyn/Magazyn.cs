@@ -19,25 +19,24 @@ namespace Magazyn
 
         internal Queue<Towar> KolejkaTowaru { get => _kolejkaTowaru; set => _kolejkaTowaru = value; }
         internal List<Towar> ListaPom { get => _listaPom; set => _listaPom = value; }
-
         public string Nazwa { get => nazwa; set => nazwa = value; }
 
         public Magazyn()
         {
-            Nazwa = string.Empty;
+            nazwa = string.Empty;
             iloscTowarow = 0;
-            KolejkaTowaru = new Queue<Towar>();
-            ListaPom = new List<Towar>();
+            _kolejkaTowaru = new Queue<Towar>();
+            _listaPom = new List<Towar>();
         }
 
         public Magazyn(string nazwa) : this()
         {
-            this.Nazwa = nazwa;
+            this.nazwa = nazwa;
         }
 
         public void Umiesc(Towar t)
         {
-            KolejkaTowaru.Enqueue(t);
+            _kolejkaTowaru.Enqueue(t);
             iloscTowarow++;
         }
 
@@ -48,23 +47,23 @@ namespace Magazyn
                 return null;
             }
             --iloscTowarow;
-            return KolejkaTowaru.Dequeue();
+            return _kolejkaTowaru.Dequeue();
         }
 
         public void Wyczysc()
         {
             iloscTowarow = 0;
-            KolejkaTowaru.Clear();
+            _kolejkaTowaru.Clear();
         }
 
         public int PodajIlosc()
         {
-            return KolejkaTowaru.Count();
+            return _kolejkaTowaru.Count();
         }
 
         public Towar PodajBiezacy()
         {
-            return KolejkaTowaru.Peek();
+            return _kolejkaTowaru.Peek();
         }
 
         public bool UsunTowar(string kod)
@@ -82,7 +81,6 @@ namespace Magazyn
             return f;
         }
 
-       
         public List<Towar> ZnajdzTowar(Typy typ)
         {
             List<Towar> lista = new List<Towar>();
@@ -100,17 +98,29 @@ namespace Magazyn
             return null;
         }
 
-        public List<Towar> ZnajdzTowar()
+        public Towar ZnajdzTowarEksport(string kod)
         {
-            List<Towar> list = new List<Towar>();
-            foreach (Towar p in _kolejkaTowaru)
+            foreach (TowarEksport t in _kolejkaTowaru)
             {
-                if (p is Towar)
-                    list.Add((Towar)p);
+                if (t.Kod == kod)
+                {
+                    return t;
+                }
             }
-            return list.Count == 0 ? null : list;
+            throw new TowarNotFoundException();
         }
-      
+
+        public Towar ZnajdzTowarImport(string kod)
+        {
+            foreach (TowarImport t in _kolejkaTowaru)
+            {
+                if (t.Kod == kod)
+                {
+                    return t;
+                }
+            }
+            throw new TowarNotFoundException();
+        }
 
         public void SortujPoCenie()
         {
@@ -159,7 +169,7 @@ namespace Magazyn
             Magazyn nowyMagazyn = new Magazyn();
             foreach (Towar t in _kolejkaTowaru)
             {
-                nowyMagazyn._kolejkaTowaru.Enqueue((Magazyn)t.Clone());
+                nowyMagazyn._kolejkaTowaru.Enqueue(t.Clone());
             }
             return nowyMagazyn;
         }
