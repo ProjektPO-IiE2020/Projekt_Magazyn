@@ -30,18 +30,19 @@ namespace Magazyn
             Console.WriteLine(pp3);
             Console.WriteLine();
 
-            Magazyn magazyn = new Magazyn();
-            magazyn.Umiesc(pp1);
-            magazyn.Umiesc(pp2);
-            magazyn.Umiesc(pp3);
-            magazyn.Umiesc(p1);
-            magazyn.Umiesc(p2);
-            magazyn.Umiesc(p3);
-            Console.WriteLine(magazyn.ToString());
+            TowaryEksport eksport = new TowaryEksport();
+            eksport.Umiesc(p1);
+            eksport.Umiesc(p2);
+            eksport.Umiesc(p3);
+            TowaryImport import = new TowaryImport();
+            import.Umiesc(pp1);
+            import.Umiesc(pp2);
+            import.Umiesc(pp3);
+            Console.WriteLine(import.ToString());
 
             Console.WriteLine(p1.Kod);
 
-
+            /*
 
             Console.WriteLine("********************************************************************************************************");
             magazyn.UsunTowar(p1.Kod);
@@ -62,7 +63,7 @@ namespace Magazyn
 
             lista1 = magazyn.ZnajdzTowarEksport(kod);
             foreach (var v in lista1)
-                Console.WriteLine(v);*/
+                Console.WriteLine(v);
             Console.WriteLine();
             magazyn.SortujPoCenie();
             Console.WriteLine(magazyn.ToString());
@@ -88,7 +89,7 @@ namespace Magazyn
             magazyn.ZapiszXML("Zapisany.xml");
             Console.WriteLine();
             ls2 = Magazyn.OdczytajXML("Zapisany.xml");
-            Console.WriteLine(ls2.ToString());
+            Console.WriteLine(ls2.ToString()); */
 
             Console.ReadKey();
         }

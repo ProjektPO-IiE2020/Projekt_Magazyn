@@ -10,15 +10,15 @@ using System.Xml.Serialization;
 namespace Magazyn
 {
     [Serializable]
-    public class Magazyn : IMagazynuje, ICloneable
+    public abstract class Magazyn : IMagazynuje
     {
         string nazwa;
         int iloscTowarow;
         private Queue<Towar> _kolejkaTowaru;
         public List<Towar> _listaPom;
 
-        internal Queue<Towar> KolejkaTowaru { get => _kolejkaTowaru; set => _kolejkaTowaru = value; }
-        internal List<Towar> ListaPom { get => _listaPom; set => _listaPom = value; }
+        public Queue<Towar> KolejkaTowaru { get => _kolejkaTowaru; set => _kolejkaTowaru = value; }
+        public List<Towar> ListaPom { get => _listaPom; set => _listaPom = value; }
         public string Nazwa { get => nazwa; set => nazwa = value; }
 
         public Magazyn()
@@ -70,7 +70,7 @@ namespace Magazyn
         {
             Queue<Towar> nowa = new Queue<Towar>();
             bool f = false;
-            foreach (TowarEksport t in _kolejkaTowaru)
+            foreach (Towar t in _kolejkaTowaru)
             {
                 if (!t.Kod.Equals(kod))
                     nowa.Enqueue(t);
@@ -139,40 +139,7 @@ namespace Magazyn
             _kolejkaTowaru = new Queue<Towar>(nowa);
         }
 
-        public void ZapiszXML(string nazwaPliku)
-        {
-            ListaPom = new List<Towar>(_kolejkaTowaru);
-            XmlSerializer xmls = new XmlSerializer(typeof(List<Towar>));
-            using (StreamWriter sw = new StreamWriter(nazwaPliku))
-            {
-                xmls.Serialize(sw, ListaPom);
-            }
-        }
-        public static Magazyn OdczytajXML(string nazwaPliku)
-        {
-            if (!File.Exists(nazwaPliku))
-            {
-                throw new FileNotFoundException();
-            }
-            Magazyn m = new Magazyn();
-            XmlSerializer xmls = new XmlSerializer(typeof(List<Towar>));
-            using (StreamReader sw = new StreamReader(nazwaPliku))
-            {
-                m.ListaPom = (List<Towar>)(xmls.Deserialize(sw));
-            }
-            m._kolejkaTowaru = new Queue<Towar>(m.ListaPom);
-            return m;
-        }
-
-        public object Clone()
-        {
-            Magazyn nowyMagazyn = new Magazyn();
-            foreach (Towar t in _kolejkaTowaru)
-            {
-                nowyMagazyn._kolejkaTowaru.Enqueue(t.Clone());
-            }
-            return nowyMagazyn;
-        }
+       
 
         public override string ToString()
         {
