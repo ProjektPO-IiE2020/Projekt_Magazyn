@@ -51,8 +51,6 @@
     <Compile Include="TowarExport.cs" />
     <Compile Include="TowarNotFoundException.cs" />
     <Compile Include="TowarImport.cs" />
-    <Compile Include="TowaryEksport.cs" />
-    <Compile Include="TowaryImport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

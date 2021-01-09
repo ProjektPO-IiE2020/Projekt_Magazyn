@@ -13,7 +13,8 @@ namespace Magazyn
         void Wyczysc();
         int PodajIlosc();
         Towar PodajBiezacy();
-        bool UsunTowar(string kod);
+        bool UsunTowarEksport(string kod);
+        bool UsunTowarImport(string kod);
         List<Towar> ZnajdzTowar(Typy typ);
         Towar ZnajdzTowarImport(string kod);
         Towar ZnajdzTowarEksport(string kod);

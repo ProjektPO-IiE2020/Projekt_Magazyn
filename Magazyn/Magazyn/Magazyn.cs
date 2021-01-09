@@ -10,12 +10,12 @@ using System.Xml.Serialization;
 namespace Magazyn
 {
     [Serializable]
-    public abstract class Magazyn : IMagazynuje
+    public class Magazyn : IMagazynuje, ICloneable
     {
         string nazwa;
         int iloscTowarow;
         private Queue<Towar> _kolejkaTowaru;
-        public List<Towar> _listaPom;
+        private List<Towar> _listaPom;
 
         public Queue<Towar> KolejkaTowaru { get => _kolejkaTowaru; set => _kolejkaTowaru = value; }
         public List<Towar> ListaPom { get => _listaPom; set => _listaPom = value; }
@@ -66,11 +66,26 @@ namespace Magazyn
             return _kolejkaTowaru.Peek();
         }
 
-        public bool UsunTowar(string kod)
+        public bool UsunTowarEksport(string kod)
         {
             Queue<Towar> nowa = new Queue<Towar>();
             bool f = false;
-            foreach (Towar t in _kolejkaTowaru)
+            foreach (TowarEksport t in _kolejkaTowaru)
+            {
+                if (!t.Kod.Equals(kod))
+                    nowa.Enqueue(t);
+                else
+                    f = true;
+            }
+            _kolejkaTowaru = nowa;
+            return f;
+        }
+
+        public bool UsunTowarImport(string kod)
+        {
+            Queue<Towar> nowa = new Queue<Towar>();
+            bool f = false;
+            foreach (TowarImport t in _kolejkaTowaru)
             {
                 if (!t.Kod.Equals(kod))
                     nowa.Enqueue(t);
@@ -139,7 +154,41 @@ namespace Magazyn
             _kolejkaTowaru = new Queue<Towar>(nowa);
         }
 
-       
+        public void ZapiszXML(string nazwaPliku)
+        {
+            ListaPom = new List<Towar>(_kolejkaTowaru);
+            XmlSerializer xmls = new XmlSerializer(typeof(List<Towar>));
+            using (StreamWriter sw = new StreamWriter(nazwaPliku))
+            {
+                xmls.Serialize(sw, ListaPom);
+            }
+        }
+
+        public static Magazyn OdczytajXML(string nazwaPliku)
+        {
+            if (!File.Exists(nazwaPliku))
+            {
+                throw new FileNotFoundException();
+            }
+            Magazyn m = new Magazyn();
+            XmlSerializer xmls = new XmlSerializer(typeof(List<Towar>));
+            using (StreamReader sw = new StreamReader(nazwaPliku))
+            {
+                m._listaPom = (List<Towar>)(xmls.Deserialize(sw));
+            }
+            m._kolejkaTowaru = new Queue<Towar>(m._listaPom);
+            return m;
+        }
+
+        public object Clone()
+        {
+            Magazyn nowyMagazyn = new Magazyn();
+            foreach (Towar t in _kolejkaTowaru)
+            {
+                nowyMagazyn._kolejkaTowaru.Enqueue(t.Clone());
+            }
+            return nowyMagazyn;
+        }
 
         public override string ToString()
         {
