@@ -30,38 +30,35 @@ namespace Magazyn
             Console.WriteLine(pp3);
             Console.WriteLine();
 
-            TowaryEksport eksport = new TowaryEksport();
-            eksport.Umiesc(p1);
-            eksport.Umiesc(p2);
-            eksport.Umiesc(p3);
-            TowaryImport import = new TowaryImport();
-            import.Umiesc(pp1);
-            import.Umiesc(pp2);
-            import.Umiesc(pp3);
-            Console.WriteLine(import.ToString());
+            Magazyn magazyn = new Magazyn();
+            magazyn.Umiesc(p1);
+            magazyn.Umiesc(p2);
+            magazyn.Umiesc(p3);
+            magazyn.Umiesc(pp1);
+            magazyn.Umiesc(pp2);
+            magazyn.Umiesc(pp3);
+            Console.WriteLine(magazyn.ToString());
 
             Console.WriteLine(p1.Kod);
-
-            /*
+            
 
             Console.WriteLine("********************************************************************************************************");
-            magazyn.UsunTowar(p1.Kod);
+            magazyn.UsunTowarEksport(p1.Kod);
             Console.WriteLine();
 
             Console.WriteLine(magazyn.ToString());
             
             Console.WriteLine();
-
             Console.WriteLine();
+
             List<Towar> lista = new List<Towar>();
             lista = magazyn.ZnajdzTowar(Typy.inne);
             foreach (var v in lista)
                 Console.WriteLine(v);
             Console.WriteLine();
-            /*List<Towar> lista1 = new List<Towar>();
-            string kod = "1001/ROS/EX";
+            List<Towar> lista1 = new List<Towar>();
 
-            lista1 = magazyn.ZnajdzTowarEksport(kod);
+            lista1 = magazyn.ZnajdzTowarEksport(p2.Kod);
             foreach (var v in lista1)
                 Console.WriteLine(v);
             Console.WriteLine();
@@ -89,7 +86,7 @@ namespace Magazyn
             magazyn.ZapiszXML("Zapisany.xml");
             Console.WriteLine();
             ls2 = Magazyn.OdczytajXML("Zapisany.xml");
-            Console.WriteLine(ls2.ToString()); */
+            Console.WriteLine(ls2.ToString()); 
 
             Console.ReadKey();
         }
