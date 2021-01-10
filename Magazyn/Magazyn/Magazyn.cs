@@ -113,11 +113,11 @@ namespace Magazyn
             return null;
         }
 
-        public Towar ZnajdzTowarEksport(string kod)
+        public TowarEksport ZnajdzTowarEksport(string kod)
         {
             foreach (TowarEksport t in _kolejkaTowaru)
             {
-                if (t.Kod == kod)
+                if (t.Kod.Equals(kod))
                 {
                     return t;
                 }
@@ -125,7 +125,7 @@ namespace Magazyn
             throw new TowarNotFoundException();
         }
 
-        public Towar ZnajdzTowarImport(string kod)
+        public TowarImport ZnajdzTowarImport(string kod)
         {
             foreach (TowarImport t in _kolejkaTowaru)
             {

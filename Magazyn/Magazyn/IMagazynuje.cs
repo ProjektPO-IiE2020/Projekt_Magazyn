@@ -16,8 +16,8 @@ namespace Magazyn
         bool UsunTowarEksport(string kod);
         bool UsunTowarImport(string kod);
         List<Towar> ZnajdzTowar(Typy typ);
-        Towar ZnajdzTowarImport(string kod);
-        Towar ZnajdzTowarEksport(string kod);
+        TowarImport ZnajdzTowarImport(string kod);
+        TowarEksport ZnajdzTowarEksport(string kod);
         void SortujPoCenie();
         void SortujPoNazwie(bool f);
     }

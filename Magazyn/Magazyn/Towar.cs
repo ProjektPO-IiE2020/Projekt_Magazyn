@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Magazyn
 {
     [Serializable]
-    public class Towar : IComparable<Towar>, IEquatable<Towar>
+    public class Towar : TypTowaru, IComparable<Towar>, IEquatable<Towar>
     {
         string _nazwa;
         Typy _typ;

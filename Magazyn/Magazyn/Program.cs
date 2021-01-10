@@ -54,13 +54,14 @@ namespace Magazyn
             List<Towar> lista = new List<Towar>();
             lista = magazyn.ZnajdzTowar(Typy.inne);
             foreach (var v in lista)
+            {
                 Console.WriteLine(v);
-            Console.WriteLine();
-            List<Towar> lista1 = new List<Towar>();
+            }
 
-            lista1 = magazyn.ZnajdzTowarEksport(p2.Kod);
-            foreach (var v in lista1)
-                Console.WriteLine(v);
+            Console.WriteLine();
+
+            TowarEksport t = magazyn.ZnajdzTowarEksport(p2.Kod);
+            Console.WriteLine(t);
             Console.WriteLine();
             magazyn.SortujPoCenie();
             Console.WriteLine(magazyn.ToString());
@@ -83,9 +84,9 @@ namespace Magazyn
             Console.WriteLine(ls3.ToString());
             Console.WriteLine();
             Console.WriteLine("XML");
-            magazyn.ZapiszXML("Zapisany.xml");
+            magazyn.ZapiszXML("Magazyn.xml");
             Console.WriteLine();
-            ls2 = Magazyn.OdczytajXML("Zapisany.xml");
+            ls2 = Magazyn.OdczytajXML("Magazyn.xml");
             Console.WriteLine(ls2.ToString()); 
 
             Console.ReadKey();
