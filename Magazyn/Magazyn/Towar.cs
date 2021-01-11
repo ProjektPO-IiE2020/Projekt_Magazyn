@@ -8,31 +8,46 @@ using System.Threading.Tasks;
 namespace Magazyn
 {
     [Serializable]
-    public class Towar : TypTowaru, IComparable<Towar>, IEquatable<Towar>
+    public abstract class Towar : TypTowaru, IComparable<Towar>, IEquatable<Towar>
     {
         string _nazwa;
         Typy _typ;
         double _cena;
         DateTime _dataProdukcji;
         DateTime _dataPrzydatnosci;
+        static int _ostatniKod;
+        string _kod;
+        Kraje _kraj;
 
         public string Nazwa { get => _nazwa; set => _nazwa = value; }
         public Typy Typ { get => _typ; set => _typ = value; }
         public double Cena { get => _cena; set => _cena = value; }
         public DateTime DataProdukcji { get => _dataProdukcji; set => _dataProdukcji = value; }
         public DateTime DataPrzydatnosci { get => _dataPrzydatnosci; set => _dataPrzydatnosci = value; }
+        public int OstatniKod { get => _ostatniKod; set => _ostatniKod = value; }
+        public string Kod { get => _kod; set => _kod = value; }
+        public Kraje Kraj { get => _kraj; set => _kraj = value; }
 
+        static Towar()
+        {
+            _ostatniKod = 1000;
+        }
 
         public Towar()
         {
+            ++_ostatniKod;
             _nazwa = null;
             _typ = Typy.inne;
             _cena = 0;
             _dataProdukcji = DateTime.MinValue;
             _dataProdukcji = DateTime.MinValue;
+            _kraj = Kraje.inny;
+            
         }
-        public Towar(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci) : this()
+        public Towar(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci, Kraje kraj) : this()
         {
+            _kraj = kraj;
+            _kod = $"{_ostatniKod}/{_kraj}/XX";
             _nazwa = nazwa;
             _typ = typ;
             _cena = cena;
@@ -42,7 +57,7 @@ namespace Magazyn
 
         public override string ToString()
         {
-            return $"{_nazwa}, {_typ} ({_cena:C}, data produkcji: {_dataProdukcji}, data przydatności: {_dataPrzydatnosci})";
+            return $"{_nazwa}, {_typ} ({_cena:C}, data produkcji: {_dataProdukcji}, data przydatności: {_dataPrzydatnosci}), KOD:{_kod}";
         }
 
         public int CompareTo(Towar other)

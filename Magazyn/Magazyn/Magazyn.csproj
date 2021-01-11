@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMagazynuje.cs" />
-    <Compile Include="Magazyn.cs" />
+    <Compile Include="IClonable.cs" />
+    <Compile Include="IMagazynujeE.cs" />
+    <Compile Include="IMagazynujeI.cs" />
+    <Compile Include="MagazynEksport.cs" />
+    <Compile Include="MagazynImport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Towar.cs" />

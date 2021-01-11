@@ -9,10 +9,9 @@ namespace Magazyn
     [Serializable]
     public class TowarImport: Towar
     {
-        static int _doKodu;   
+        static int _doKodu;
         string _kod;
         Kraje _kraj;
-        public string Kod { get => _kod; set => _kod = value; }
 
         static TowarImport()
         {
@@ -23,16 +22,17 @@ namespace Magazyn
         {
         }
 
-        public TowarImport(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci, Kraje kraj) : base(nazwa, typ, cena, dataProdukcji, dataPrzydatnosci)
+        public TowarImport(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci, Kraje kraj) : base(nazwa, typ, cena, dataProdukcji, dataPrzydatnosci, kraj)
         {
             _kraj = kraj;
+            --OstatniKod;
             _kod = $"{++_doKodu}/{kraj.ToString().Substring(0, 3).ToUpper()}/IM";
         }
 
 
         public override string ToString()
         {
-            return $"{base.ToString()}, pochodzenie: {_kraj}, KOD: {_kod}";
+            return $"{base.ToString()}, pochodzenie: {_kraj}";
         }
     }
 }
