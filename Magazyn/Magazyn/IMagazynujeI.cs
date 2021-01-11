@@ -8,15 +8,15 @@ namespace Magazyn
 {
     interface IMagazynujeI
     {
-        void Umiesc(TowarImport t);
-        TowarImport Pobierz();
-        void Wyczysc();
-        int PodajIlosc();
-        TowarImport PodajBiezacy();
-        bool UsunTowar(string kod);
-        List<TowarImport> ZnajdzTowar(Typy typ);
-        TowarImport ZnajdzTowar(string kod);
-        void SortujPoCenie();
-        void SortujPoNazwie(bool f);
+        void UmiescImport(TowarImport t);
+        TowarImport PobierzImport();
+        void WyczyscImport();
+        int PodajIloscImport();
+        TowarImport PodajBiezacyImport();
+        bool UsunTowarImport(string kod);
+        List<TowarImport> ZnajdzTowarImport(Typy typ);
+        TowarImport ZnajdzTowarImport(string kod);
+        void SortujPoCenieImport();
+        void SortujPoNazwieImport(bool f);
     }
 }

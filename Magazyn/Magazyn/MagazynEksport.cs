@@ -33,13 +33,13 @@ namespace Magazyn
             this.nazwa = nazwa;
         }
 
-        public void Umiesc(TowarEksport t)
+        public void UmiescEksport(TowarEksport t)
         {
             _kolejkaEksport.Enqueue(t);
             iloscTowarow++;
         }
 
-        public TowarEksport Pobierz()
+        public TowarEksport PobierzEksport()
         {
             if (iloscTowarow == 0)
             {
@@ -49,23 +49,23 @@ namespace Magazyn
             return _kolejkaEksport.Dequeue();
         }
 
-        public void Wyczysc()
+        public void WyczyscEksport()
         {
             iloscTowarow = 0;
             _kolejkaEksport.Clear();
         }
 
-        public int PodajIlosc()
+        public int PodajIloscEksport()
         {
             return _kolejkaEksport.Count();
         }
 
-        public TowarEksport PodajBiezacy()
+        public TowarEksport PodajBiezacyEksport()
         {
             return _kolejkaEksport.Peek();
         }
 
-        public bool UsunTowar(string kod)
+        public bool UsunTowarEksport(string kod)
         {
             Queue<TowarEksport> nowa = new Queue<TowarEksport>();
             bool f = false;
@@ -81,7 +81,7 @@ namespace Magazyn
         }
 
 
-        public List<TowarEksport> ZnajdzTowar(Typy typ)
+        public List<TowarEksport> ZnajdzTowarEksport(Typy typ)
         {
             List<TowarEksport> lista = new List<TowarEksport>();
             foreach (TowarEksport t in _kolejkaEksport)
@@ -98,7 +98,7 @@ namespace Magazyn
             return null;
         }
 
-        public TowarEksport ZnajdzTowar(string kod)
+        public TowarEksport ZnajdzTowarEksport(string kod)
         {
             foreach (TowarEksport t in _kolejkaEksport)
             {
@@ -111,7 +111,7 @@ namespace Magazyn
         }
 
 
-        public void SortujPoCenie()
+        public void SortujPoCenieEksport()
         {
             List<TowarEksport> nowa = new List<TowarEksport>(_kolejkaEksport);
             nowa.Sort();
@@ -119,7 +119,7 @@ namespace Magazyn
         }
 
 
-        public void SortujPoNazwie(bool f)
+        public void SortujPoNazwieEksport(bool f)
         {
             List<TowarEksport> nowa = new List<TowarEksport>(_kolejkaEksport);
             nowa.Sort((x, y) => x.Nazwa.CompareTo(y.Nazwa));
@@ -128,7 +128,7 @@ namespace Magazyn
             _kolejkaEksport = new Queue<TowarEksport>(nowa);
         }
 
-        public void ZapiszXML(string nazwaPliku)
+        public void ZapiszXMLEksport(string nazwaPliku)
         {
             _listaEksport = new List<TowarEksport>(_kolejkaEksport);
             XmlSerializer xmls = new XmlSerializer(typeof(List<TowarEksport>));
@@ -138,7 +138,7 @@ namespace Magazyn
             }
         }
 
-        public static MagazynEksport OdczytajXML(string nazwaPliku)
+        public static MagazynEksport OdczytajXMLEksport(string nazwaPliku)
         {
             if (!File.Exists(nazwaPliku))
             {
@@ -154,7 +154,7 @@ namespace Magazyn
             return m;
         }
 
-        public object Clone()
+        public object CloneEksport()
         {
             MagazynEksport nowyMagazyn = new MagazynEksport();
             foreach (TowarEksport t in _kolejkaEksport)
@@ -167,7 +167,7 @@ namespace Magazyn
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Magazyn: {Nazwa}");
+            sb.AppendLine($"Magazyn Eksport: {Nazwa}");
             foreach (TowarEksport t in _kolejkaEksport)
             {
                 sb.AppendLine(t.ToString());

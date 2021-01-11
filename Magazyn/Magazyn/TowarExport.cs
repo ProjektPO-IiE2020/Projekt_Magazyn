@@ -32,7 +32,7 @@ namespace Magazyn
 
         public override string ToString()
         {
-            return $"{base.ToString()}, destynacja: {_kraj}";
+            return $"{base.ToString()}, KOD: {_kod}, destynacja: {_kraj}";
         }
     }
 }
