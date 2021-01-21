@@ -10,32 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Magazyn;
 
 namespace MagazynGUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy Obsluga_import.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Obsluga_import : Window
     {
-        
-        public MainWindow()
+        public Obsluga_import()
         {
             InitializeComponent();
-        }
-
-
-        private void button_IMPORT_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button_EKSPORT_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }

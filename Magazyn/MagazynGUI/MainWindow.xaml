@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Magazyn" Height="450" Width="800">
     <Grid>
-        <Button Content="Zniszcz świat" HorizontalAlignment="Left" Margin="204,58,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Nie rób tego :(" HorizontalAlignment="Left" Margin="204,83,0,0" VerticalAlignment="Top" Width="521"/>
+        <Button x:Name="button_EKSPORT" Content="EKSPORT" HorizontalAlignment="Left" Margin="174,138,0,0" VerticalAlignment="Top" Width="165" Height="122" Click="button_EKSPORT_Click"/>
+        <Button x:Name="button_IMPORT" Content="IMPORT" HorizontalAlignment="Left" Margin="468,138,0,0" VerticalAlignment="Top" Width="171" Height="122" Click="button_IMPORT_Click"/>
 
     </Grid>
 </Window>
