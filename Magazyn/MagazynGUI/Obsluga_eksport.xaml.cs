@@ -55,5 +55,10 @@ namespace MagazynGUI
                 listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.KolejkaEksport);
             }
         }
+
+        private void button_EKSPORT_znajdz_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
