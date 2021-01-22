@@ -27,12 +27,6 @@ namespace MagazynGUI
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-
         private void button_EKSPORT_dodaj_Click(object sender, RoutedEventArgs e)
         {
             TowarEksport t = new TowarEksport();
@@ -45,7 +39,6 @@ namespace MagazynGUI
             }
         }
 
-
         private void button_EKSPORT_usun_Click(object sender, RoutedEventArgs e)
         {
             if (_magazyn is object && listbox_EKSPORT.SelectedIndex > -1) // spr czy wybralismy jakis element
@@ -54,6 +47,73 @@ namespace MagazynGUI
                 _magazyn.UsunTowarEksport(te.Kod);
                 listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.KolejkaEksport);
             }
+        }
+
+        private void MenuOtworz_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                string filename = dlg.FileName;
+                _magazyn = MagazynEksport.OdczytajXMLEksport(filename);
+
+                if (_magazyn is object)
+                {
+                    listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.ListaEksport);
+                }
+            }
+        }
+
+        private void MenuZapisz_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                string filename = dlg.FileName;
+                _magazyn.ZapiszXMLEksport(filename);
+            }
+        }
+
+        private void MenuWyjdz_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void listbox_EKSPORT_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void text_EKSPORT_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        }
+
+        private void button_EKSPORT_szukaj_Click(object sender, RoutedEventArgs e)
+        {
+            string wyszukaj = text_EKSPORT.Text;
+            List<TowarEksport> znalezione = new List<TowarEksport>();
+            foreach (TowarEksport t in _magazyn.ListaEksport)
+            {
+                if(t.Nazwa.ToLower().Contains(wyszukaj.ToLower()))
+                {
+                    znalezione.Add(t);
+                }
+            }
+            listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(znalezione);
+
+        }
+
+        private void button_EKSPORT_odswiez_Click(object sender, RoutedEventArgs e)
+        {
+            listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.ListaEksport);
+            text_EKSPORT.Clear();
         }
     }
 }

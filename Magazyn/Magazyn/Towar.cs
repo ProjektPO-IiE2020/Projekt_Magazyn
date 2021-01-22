@@ -57,7 +57,7 @@ namespace Magazyn
 
         public override string ToString()
         {
-            return $"{_nazwa}, {_typ} ({_cena:C}, data produkcji: {_dataProdukcji}, data przydatności: {_dataPrzydatnosci})";
+            return $"{_nazwa}, {_typ} ({_cena:C}, data produkcji: {_dataProdukcji.ToShortDateString()}, data przydatności: {_dataPrzydatnosci.ToShortDateString()})";
         }
 
         public int CompareTo(Towar other)

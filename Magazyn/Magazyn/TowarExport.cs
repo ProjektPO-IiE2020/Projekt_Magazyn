@@ -29,7 +29,6 @@ namespace Magazyn
             _kod = $"{++_doKodu}/{kraj.ToString().Substring(0, 3).ToUpper()}/EX";
         }
 
-
         public override string ToString()
         {
             return $"{base.ToString()}, KOD: {_kod}, destynacja: {_kraj}";

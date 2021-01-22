@@ -64,7 +64,7 @@ namespace Magazyn
             Console.WriteLine();
 
             Console.WriteLine(eksport.ToString());
-            
+
             Console.WriteLine();
             Console.WriteLine();
 

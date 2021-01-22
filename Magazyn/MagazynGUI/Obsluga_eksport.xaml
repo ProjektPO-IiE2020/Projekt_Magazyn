@@ -7,14 +7,27 @@
         mc:Ignorable="d"
         Title="Obsluga_eksport" Height="450" Width="800">
     <Grid x:Name="___Brak_nazwy_">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="133*"/>
+            <ColumnDefinition Width="264*"/>
+        </Grid.ColumnDefinitions>
         <Button x:Name="button_EKSPORT_dodaj" Content="Dodaj Produkty" HorizontalAlignment="Left" Height="94" Margin="54,64,0,0" VerticalAlignment="Top" Width="154" Click="button_EKSPORT_dodaj_Click" />
         <Button x:Name="button_EKSPORT_znajdz" Content="Znajdź Produkty" HorizontalAlignment="Left" Height="97" Margin="54,260,0,0" VerticalAlignment="Top" Width="154" />
         <Button x:Name="button_EKSPORT_usun" Content="Usuń Produkty" HorizontalAlignment="Left" Height="92" Margin="54,163,0,0" VerticalAlignment="Top" Width="154" Click="button_EKSPORT_usun_Click" />
-        <ListBox x:Name="listbox_EKSPORT" HorizontalAlignment="Left" Height="253" Margin="236,104,0,0" VerticalAlignment="Top" Width="427"/>
-        <TextBox x:Name="text_EKSPORT" HorizontalAlignment="Left" Height="44" Margin="236,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="427"/>
-        <Button x:Name="button_EKSPORT_szukaj" Content="Szukaj" HorizontalAlignment="Left" Height="44" Margin="668,55,0,0" VerticalAlignment="Top" Width="93"/>
-        <Menu HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="62">
-            <MenuItem Header="Zamknij" Height="21" Width="64" Click="MenuItem_Click"/>
+        <ListBox x:Name="listbox_EKSPORT" HorizontalAlignment="Left" Height="253" Margin="236,104,0,0" VerticalAlignment="Top" Width="427" SelectionChanged="listbox_EKSPORT_SelectionChanged" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="text_EKSPORT" HorizontalAlignment="Left" Height="26" Margin="236,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="427" Grid.ColumnSpan="2" TextChanged="text_EKSPORT_TextChanged"/>
+        <Button x:Name="button_EKSPORT_szukaj" Content="Szukaj" HorizontalAlignment="Left" Height="44" Margin="402.1,55,0,0" VerticalAlignment="Top" Width="93" Grid.Column="1" Click="button_EKSPORT_szukaj_Click"/>
+        <Menu HorizontalAlignment="Stretch" Height="21"  VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
+            <MenuItem Header="Plik" Height="21" Width="100" Click="MenuItem_Click">
+                <MenuItem Header="Otwórz" HorizontalAlignment="Left" Height="33" Width="150" Click="MenuOtworz_Click" Margin="0,0,-50,0"/>
+                <MenuItem Header="Zapisz" HorizontalAlignment="Left" Height="33" Width="148" Click="MenuZapisz_Click" Margin="0,0,-48,0"/>
+                <MenuItem Header="Wyjdź" HorizontalAlignment="Left" Height="33" Width="146" Click="MenuWyjdz_Click" Margin="0,0,-46,0"/>
+            </MenuItem>
         </Menu>
+        <Button x:Name="button_EKSPORT_szukaj_Copy" Content="Szukaj" HorizontalAlignment="Left" Height="44" Margin="402.1,55,0,0" VerticalAlignment="Top" Width="93" Grid.Column="1" Click="button_EKSPORT_szukaj_Click"/>
+        <Button Content="Odswież listę" HorizontalAlignment="Left" VerticalAlignment="Top" Width="93" Grid.Column="1" Margin="402.4,104,0,0" Height="44" Click="button_EKSPORT_odswiez_Click" RenderTransformOrigin="0.501,1.314"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="16" Margin="236,34,0,0" TextWrapping="Wrap" Text=" Wyszukaj po nazwie:" VerticalAlignment="Top" Width="245"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="16" Margin="236,83,0,0" TextWrapping="Wrap" Text=" Towary:" VerticalAlignment="Top" Width="245"/>
+
     </Grid>
 </Window>

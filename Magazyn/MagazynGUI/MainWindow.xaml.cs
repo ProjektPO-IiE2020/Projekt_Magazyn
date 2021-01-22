@@ -40,18 +40,7 @@ namespace MagazynGUI
             Obsluga_eksport okno = new Obsluga_eksport();
             bool? ret = okno.ShowDialog();
         }
-
-        private void MenuOtworz_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuZapisz_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuWyjdz_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
