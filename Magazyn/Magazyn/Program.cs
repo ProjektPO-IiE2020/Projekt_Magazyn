@@ -94,6 +94,7 @@ namespace Magazyn
             MagazynEksport ls1 = new MagazynEksport();
             MagazynEksport ls2 = new MagazynEksport();
             MagazynEksport ls3 = new MagazynEksport();
+            MagazynImport ls4 = new MagazynImport();
             Console.WriteLine();
             Console.WriteLine("Kopiowanie");
             ls3 = (MagazynEksport)ls1.CloneEksport();
@@ -104,6 +105,13 @@ namespace Magazyn
             Console.WriteLine();
             ls2 = MagazynEksport.OdczytajXMLEksport("MagazynE.xml");
             Console.WriteLine(ls2.ToString());
+
+            Console.WriteLine();
+
+            import.ZapiszXMLImport("MagazynI.xml");
+            Console.WriteLine();
+            ls4 = MagazynImport.OdczytajXMLImport("MagazynI.xml");
+            Console.WriteLine(ls4.ToString());
 
             Console.ReadKey();
         }

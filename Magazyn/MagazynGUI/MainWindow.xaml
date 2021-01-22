@@ -7,14 +7,19 @@
         mc:Ignorable="d"
         Title="Magazyn" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Button x:Name="button_EKSPORT" Content="EKSPORT" HorizontalAlignment="Left" Margin="174,138,0,0" VerticalAlignment="Top" Width="165" Height="122" Click="button_EKSPORT_Click"/>
         <Button x:Name="button_IMPORT" Content="IMPORT" HorizontalAlignment="Left" Margin="468,138,0,0" VerticalAlignment="Top" Width="171" Height="122" Click="button_IMPORT_Click"/>
-        <Menu HorizontalAlignment="Stretch" Height="32"  VerticalAlignment="Top" Width="800" Margin="0,0,-8,0">
-            <MenuItem Header="Plik" Height="32" Width="100">
+        <Menu HorizontalAlignment="Stretch" Height="21"  VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <MenuItem Header="Plik" Height="21" Width="100">
                 <MenuItem Header="Otwórz" HorizontalAlignment="Left" Height="33" Width="150" Click="MenuOtworz_Click" Margin="0,0,-50,0"/>
                 <MenuItem Header="Zapisz" HorizontalAlignment="Left" Height="33" Width="148" Click="MenuZapisz_Click" Margin="0,0,-48,0"/>
                 <MenuItem Header="Wyjdź" HorizontalAlignment="Left" Height="33" Width="146" Click="MenuWyjdz_Click" Margin="0,0,-46,0"/>
             </MenuItem>
         </Menu>
+        <Label Content="MAGAZYN" HorizontalAlignment="Left" Height="56" Margin="346,76,0,0" VerticalAlignment="Top" Width="114" FontSize="20" FontWeight="Bold"/>
     </Grid>
 </Window>

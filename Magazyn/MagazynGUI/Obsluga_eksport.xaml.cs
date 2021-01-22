@@ -27,6 +27,12 @@ namespace MagazynGUI
             InitializeComponent();
         }
 
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+
         private void button_EKSPORT_dodaj_Click(object sender, RoutedEventArgs e)
         {
             TowarEksport t = new TowarEksport();
@@ -36,6 +42,17 @@ namespace MagazynGUI
             {
                 _magazyn.UmiescEksport(t);
                 listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.KolejkaEksport);// odświeżamy listę do wyświetlenia
+            }
+        }
+
+
+        private void button_EKSPORT_usun_Click(object sender, RoutedEventArgs e)
+        {
+            if (_magazyn is object && listbox_EKSPORT.SelectedIndex > -1) // spr czy wybralismy jakis element
+            {
+                TowarEksport te = (TowarEksport)listbox_EKSPORT.SelectedItem;
+                _magazyn.UsunTowarEksport(te.Kod);
+                listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.KolejkaEksport);
             }
         }
     }

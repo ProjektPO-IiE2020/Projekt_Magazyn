@@ -26,5 +26,15 @@ namespace MagazynGUI
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void button_IMPORT_usun_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

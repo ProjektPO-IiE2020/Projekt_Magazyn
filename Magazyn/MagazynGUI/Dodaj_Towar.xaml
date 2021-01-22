@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MagazynGUI"
         mc:Ignorable="d"
         Title="Dodaj_Towar" Height="411" Width="468">
-    <Grid Margin="0,0,2,37">
+    <Grid Margin="35,21,-33,16">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="130*"/>
             <ColumnDefinition Width="93*"/>

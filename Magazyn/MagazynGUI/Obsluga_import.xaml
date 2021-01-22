@@ -9,9 +9,13 @@
     <Grid>
         <Button x:Name="button_IMPORT_dodaj" Content="Dodaj Produkty" HorizontalAlignment="Left" Height="81" Margin="41,84,0,0" VerticalAlignment="Top" Width="154" />
         <Button x:Name="button_IMPORT_znajdz" Content="Znajdź Produkty" HorizontalAlignment="Left" Height="81" Margin="41,256,0,0" VerticalAlignment="Top" Width="154" />
-        <Button x:Name="button_IMPORT_usun" Content="Usuń Produkty" HorizontalAlignment="Left" Height="81" Margin="41,170,0,0" VerticalAlignment="Top" Width="154" />
+        <Button x:Name="button_IMPORT_usun" Content="Usuń Produkty" HorizontalAlignment="Left" Height="81" Margin="41,170,0,0" VerticalAlignment="Top" Width="154" Click="button_IMPORT_usun_Click" />
         <ListBox x:Name="listbox_IMPORT" HorizontalAlignment="Left" Height="253" Margin="216,84,0,0" VerticalAlignment="Top" Width="466"/>
         <TextBox x:Name="text_IMPORT" HorizontalAlignment="Left" Height="44" Margin="216,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="466"/>
         <Button x:Name="button_IMPORT_szukaj" Content="Szukaj" HorizontalAlignment="Left" Height="44" Margin="687,35,0,0" VerticalAlignment="Top" Width="95"/>
+        <Menu HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="62">
+            <MenuItem Header="Zamknij" Height="21" Width="64" Click="MenuItem_Click"/>
+        </Menu>
+        
     </Grid>
 </Window>
