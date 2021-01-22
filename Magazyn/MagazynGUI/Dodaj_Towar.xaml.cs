@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,14 +16,24 @@ using Magazyn;
 namespace MagazynGUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Obsluga_import.xaml
+    /// Logika interakcji dla klasy Dodaj_Towar.xaml
     /// </summary>
-    public partial class Obsluga_import : Window
+    public partial class Dodaj_Towar : Window
     {
-        MagazynImport _magazyn;
-        public Obsluga_import()
+        Towar _towar;
+        public Dodaj_Towar()
         {
             InitializeComponent();
+        }
+        public Dodaj_Towar(Towar t) : this()
+        {
+
+        }
+        
+
+        private void btnAnuluj_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }

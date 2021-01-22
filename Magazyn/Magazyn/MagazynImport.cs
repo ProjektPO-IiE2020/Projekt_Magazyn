@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 namespace Magazyn
 {
     [Serializable]
-    class MagazynImport : IClonable
+    public class MagazynImport : IClonable
     {
         string nazwa;
         int iloscTowarow;

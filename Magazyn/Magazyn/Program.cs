@@ -100,9 +100,9 @@ namespace Magazyn
             Console.WriteLine(ls3.ToString());
             Console.WriteLine();
             Console.WriteLine("XML");
-            eksport.ZapiszXMLEksport("Magazyn.xml");
+            eksport.ZapiszXMLEksport("MagazynE.xml");
             Console.WriteLine();
-            ls2 = MagazynEksport.OdczytajXMLEksport("Magazyn.xml");
+            ls2 = MagazynEksport.OdczytajXMLEksport("MagazynE.xml");
             Console.WriteLine(ls2.ToString());
 
             Console.ReadKey();

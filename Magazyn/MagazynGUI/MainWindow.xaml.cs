@@ -21,7 +21,8 @@ namespace MagazynGUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        MagazynEksport me = new MagazynEksport();
+        MagazynImport mi = new MagazynImport();
         public MainWindow()
         {
             InitializeComponent();
@@ -30,12 +31,29 @@ namespace MagazynGUI
 
         private void button_IMPORT_Click(object sender, RoutedEventArgs e)
         {
-
+            Obsluga_import okno = new Obsluga_import();
+            bool? ret = okno.ShowDialog();
         }
 
         private void button_EKSPORT_Click(object sender, RoutedEventArgs e)
         {
-            
+            Obsluga_eksport okno = new Obsluga_eksport();
+            bool? ret = okno.ShowDialog();
+        }
+
+        private void MenuOtworz_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuZapisz_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuWyjdz_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
