@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="Obsluga_eksport" Height="450" Width="800">
     <Grid x:Name="___Brak_nazwy_">
-        <Button x:Name="button_EKSPORT_dodaj" Content="Dodaj Produkty" HorizontalAlignment="Left" Height="51" Margin="97,84,0,0" VerticalAlignment="Top" Width="154" Click="button_EKSPORT_dodaj_Click" />
-        <Button x:Name="button_EKSPORT_znajdz" Content="Znajdź Produkty" HorizontalAlignment="Left" Height="51" Margin="97,243,0,0" VerticalAlignment="Top" Width="154" />
-        <Button x:Name="button_EKSPORT_usun" Content="Usuń Produkty" HorizontalAlignment="Left" Height="51" Margin="97,165,0,0" VerticalAlignment="Top" Width="154" />
-        <ListBox x:Name="listbox_EKSPORT" HorizontalAlignment="Left" Height="253" Margin="279,84,0,0" VerticalAlignment="Top" Width="427"/>
-        <TextBox x:Name="text_EKSPORT" HorizontalAlignment="Left" Height="44" Margin="279,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="427"/>
-        <Button x:Name="button_EKSPORT_szukaj" Content="Szukaj" HorizontalAlignment="Left" Height="44" Margin="711,35,0,0" VerticalAlignment="Top" Width="71"/>
+        <Button x:Name="button_EKSPORT_dodaj" Content="Dodaj Produkty" HorizontalAlignment="Left" Height="94" Margin="54,64,0,0" VerticalAlignment="Top" Width="154" Click="button_EKSPORT_dodaj_Click" />
+        <Button x:Name="button_EKSPORT_znajdz" Content="Znajdź Produkty" HorizontalAlignment="Left" Height="97" Margin="54,260,0,0" VerticalAlignment="Top" Width="154" />
+        <Button x:Name="button_EKSPORT_usun" Content="Usuń Produkty" HorizontalAlignment="Left" Height="92" Margin="54,163,0,0" VerticalAlignment="Top" Width="154" />
+        <ListBox x:Name="listbox_EKSPORT" HorizontalAlignment="Left" Height="253" Margin="236,104,0,0" VerticalAlignment="Top" Width="427"/>
+        <TextBox x:Name="text_EKSPORT" HorizontalAlignment="Left" Height="44" Margin="236,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="427"/>
+        <Button x:Name="button_EKSPORT_szukaj" Content="Szukaj" HorizontalAlignment="Left" Height="44" Margin="668,55,0,0" VerticalAlignment="Top" Width="93"/>
     </Grid>
 </Window>
