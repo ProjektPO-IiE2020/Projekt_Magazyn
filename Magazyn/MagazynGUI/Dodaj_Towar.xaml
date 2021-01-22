@@ -6,18 +6,18 @@
         xmlns:local="clr-namespace:MagazynGUI"
         mc:Ignorable="d"
         Title="Dodaj_Towar" Height="411" Width="468">
-    <Grid Margin="35,21,-33,16">
+    <Grid Margin="0,0,2,-3">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="130*"/>
-            <ColumnDefinition Width="93*"/>
-            <ColumnDefinition Width="110*"/>
-            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="195*"/>
+            <ColumnDefinition Width="63*"/>
+
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="text_Nazwa" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Margin="1,15,0,0" Grid.ColumnSpan="2" Grid.Column="1" FontSize="16"/>
-        <TextBox x:Name="text_Cena" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Margin="1,57,0,0" Grid.ColumnSpan="2" Grid.Column="1" FontSize="16"/>
-        <TextBox x:Name="text_DataWaznosci" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="1,99,0,0" Grid.ColumnSpan="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" Width="196"/>
-        <TextBox x:Name="text_DataProdukcji" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Margin="1,141,0,0" Grid.ColumnSpan="2" Grid.Column="1" FontSize="16"/>
-        <ComboBox x:Name="combo_typ" Height="40" Margin="1,184,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" RenderTransformOrigin="0.599,-1.288" FontSize="16" HorizontalAlignment="Left" Width="196">
+        <TextBox x:Name="text_Nazwa" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Margin="1,15,0,0" Grid.Column="1" FontSize="16" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="text_Cena" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Margin="1,57,0,0" Grid.ColumnSpan="2" Grid.Column="1" FontSize="16"/>
+        <TextBox x:Name="text_DataWaznosci" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Margin="1,99,0,0" Grid.ColumnSpan="2" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" Width="195"/>
+        <TextBox x:Name="text_DataProdukcji" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Margin="1,141,0,0" Grid.ColumnSpan="2" Grid.Column="1" FontSize="16"/>
+        <ComboBox x:Name="combo_typ" Height="40" Margin="1,184,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" RenderTransformOrigin="0.599,-1.288" FontSize="16" HorizontalAlignment="Left" Width="195">
             <ComboBoxItem x:Name="napoje">napoje</ComboBoxItem>
             <ComboBoxItem x:Name="warzywa">warzywa</ComboBoxItem>
             <ComboBoxItem x:Name="owoce">owoce</ComboBoxItem>
@@ -27,14 +27,14 @@
             <ComboBoxItem x:Name="inne">inne</ComboBoxItem>
         </ComboBox>
 
-        <Button x:Name="btnZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Margin="27,283,0,0" Height="50" />
-        <Button x:Name="btnAnuluj" Content="Anuluj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Margin="57,283,0,0" Height="50" Grid.Column="1" RenderTransformOrigin="0.462,0.2" Click="btnAnuluj_Click"/>
+        <Button x:Name="btnZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="70,283,0,0" Height="50" Click="btnZatwierdz_Click" />
+        <Button x:Name="btnAnuluj" Content="Anuluj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Grid.ColumnSpan="2" Margin="57,283,0,0" Height="50" Grid.Column="1" RenderTransformOrigin="0.462,0.2" Click="btnAnuluj_Click"/>
         <Label Content="Nazwa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,15,0,0" Width="130" Height="40" FontSize="16"/>
         <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,57,0,0" Width="130" Height="40" Content="Cena" FontSize="16"/>
         <Label Content="Data_Ważności" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,99,0,0" Width="130" Height="40" FontSize="16"/>
         <Label Content="Data_Produkcji" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,141,0,0" Width="130" Height="40" FontSize="16"/>
         <Label Content="Typ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,183,0,0" Width="130" Height="40" FontSize="16"/>
-        <ComboBox x:Name="combo_kraj" Height="40" Margin="0,229,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" RenderTransformOrigin="0.599,-1.288" FontSize="16" HorizontalAlignment="Left" Width="196">
+        <ComboBox x:Name="combo_kraj" Height="40" Margin="0,229,0,0" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.599,-1.288" FontSize="16" HorizontalAlignment="Left" Width="195">
             <ComboBoxItem x:Name="Brazylia" Content="Brazylia"/>
             <ComboBoxItem x:Name="Norwegia" Content="Norwegia"/>
             <ComboBoxItem x:Name="Egipt" Content="Egipt"/>
