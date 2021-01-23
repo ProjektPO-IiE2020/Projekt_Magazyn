@@ -28,11 +28,6 @@ namespace Magazyn
         public string Kod { get => _kod; set => _kod = value; }
         public Kraje Kraj { get => _kraj; set => _kraj = value; }
 
-        static Towar()
-        {
-            _ostatniKod = 1000;
-        }
-
         public Towar()
         {
             ++_ostatniKod;
@@ -47,7 +42,6 @@ namespace Magazyn
         public Towar(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci, Kraje kraj) : this()
         {
             _kraj = kraj;
-            _kod = $"{_ostatniKod}/{_kraj}/XX";
             _nazwa = nazwa;
             _typ = typ;
             _cena = cena;

@@ -10,7 +10,6 @@ namespace Magazyn
     public class TowarEksport : Towar
     {
         static int _doKodu;
-        string _kod;
         Kraje _kraj;
 
         static TowarEksport()
@@ -25,13 +24,12 @@ namespace Magazyn
         public TowarEksport(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci, Kraje kraj) : base(nazwa, typ, cena, dataProdukcji, dataPrzydatnosci, kraj)
         {
             _kraj = kraj;
-            --OstatniKod;
-            _kod = $"{++_doKodu}/{kraj.ToString().Substring(0, 3).ToUpper()}/EX";
+            Kod = $"{++_doKodu}/{kraj.ToString().Substring(0, 3).ToUpper()}/EX";
         }
 
         public override string ToString()
         {
-            return $"{base.ToString()}, KOD: {_kod}, destynacja: {_kraj}";
+            return $"{base.ToString()}, KOD: {Kod}, destynacja: {_kraj}";
         }
     }
 }

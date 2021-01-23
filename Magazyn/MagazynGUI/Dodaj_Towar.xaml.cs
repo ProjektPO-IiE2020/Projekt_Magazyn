@@ -45,7 +45,7 @@ namespace MagazynGUI
                 string[] formatDaty = { "dd.MM.yyyy" };
                 DateTime.TryParseExact(text_DataProdukcji.Text, formatDaty, null, System.Globalization.DateTimeStyles.None, out DateTime dataPr);
                 DateTime.TryParseExact(text_DataWaznosci.Text, formatDaty, null, System.Globalization.DateTimeStyles.None, out DateTime dataWaz);
-                if (dataPr.Year == 1)
+                if (dataPr.Year == 1 || dataWaz.Year == 1)
                 {
                     string message = "Data urodzenia powinna zostać wpisana w formacie dd.MM.yyyy";
                     string title = "Niepoprawny format daty";
