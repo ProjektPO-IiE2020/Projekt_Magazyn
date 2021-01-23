@@ -37,7 +37,7 @@ namespace MagazynGUI
 
                 if (_magazyn is object)
                 {
-                    listbox_IMPORT.ItemsSource = new ObservableCollection<TowarImport>(_magazyn.ListaImport);
+                    listbox_IMPORT.ItemsSource = new ObservableCollection<TowarImport>(_magazyn.KolejkaImport);
                 }
             }
         }
@@ -82,7 +82,7 @@ namespace MagazynGUI
 
         private void button_IMPORT_odswiez_Click(object sender, RoutedEventArgs e)
         {
-            listbox_IMPORT.ItemsSource = new ObservableCollection<TowarImport>(_magazyn.ListaImport);
+            listbox_IMPORT.ItemsSource = new ObservableCollection<TowarImport>(_magazyn.KolejkaImport);
             text_IMPORT.Clear();
         }
 
@@ -90,7 +90,7 @@ namespace MagazynGUI
         {
             string wyszukaj = text_IMPORT.Text;
             List<TowarImport> znalezione = new List<TowarImport>();
-            foreach (TowarImport t in _magazyn.ListaImport)
+            foreach (TowarImport t in _magazyn.KolejkaImport)
             {
                 if (t.Nazwa.ToLower().Contains(wyszukaj.ToLower()))
                 {

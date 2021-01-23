@@ -60,7 +60,7 @@ namespace MagazynGUI
 
                 if (_magazyn is object)
                 {
-                    listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.ListaEksport);
+                    listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.KolejkaEksport);
                 }
             }
         }
@@ -99,7 +99,7 @@ namespace MagazynGUI
         {
             string wyszukaj = text_EKSPORT.Text;
             List<TowarEksport> znalezione = new List<TowarEksport>();
-            foreach (TowarEksport t in _magazyn.ListaEksport)
+            foreach (TowarEksport t in _magazyn.KolejkaEksport)
             {
                 if(t.Nazwa.ToLower().Contains(wyszukaj.ToLower()))
                 {
@@ -112,7 +112,7 @@ namespace MagazynGUI
 
         private void button_EKSPORT_odswiez_Click(object sender, RoutedEventArgs e)
         {
-            listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.ListaEksport);
+            listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.KolejkaEksport);
             text_EKSPORT.Clear();
         }
 
