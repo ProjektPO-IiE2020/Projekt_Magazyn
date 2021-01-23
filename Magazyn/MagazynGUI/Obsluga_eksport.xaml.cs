@@ -115,5 +115,10 @@ namespace MagazynGUI
             listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.ListaEksport);
             text_EKSPORT.Clear();
         }
+
+        private void button_EKSPORT_znajdz_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

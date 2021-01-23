@@ -68,14 +68,16 @@ namespace MagazynGUI
 
         }
 
-        private void button_IMPORT_dodaj_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void button_IMPORT_dodaj_Click_1(object sender, RoutedEventArgs e)
         {
-            
+            TowarImport t = new TowarImport();
+            Dodaj_Towar okno = new Dodaj_Towar(t);
+            bool? ret = okno.ShowDialog();
+            if (ret == true)
+            {
+                _magazyn.UmiescImport(t);
+                listbox_IMPORT.ItemsSource = new ObservableCollection<TowarImport>(_magazyn.KolejkaImport);// odświeżamy listę do wyświetlenia
+            }
         }
 
         private void button_IMPORT_odswiez_Click(object sender, RoutedEventArgs e)

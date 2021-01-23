@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,14 +24,15 @@ namespace MagazynGUI
         Towar _towar;
         public Dodaj_Towar()
         {
+
             InitializeComponent();
         }
+
         public Dodaj_Towar(Towar t) : this()
         {
-
+            _towar = t;
         }
         
-
         private void btnAnuluj_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
@@ -52,7 +54,7 @@ namespace MagazynGUI
                 else
                 {
                     _towar.Nazwa = text_Nazwa.Text;
-                    _towar.Cena = Convert.ToDouble(text_Cena);
+                    _towar.Cena = Convert.ToDouble(text_Cena.Text);
                     _towar.DataProdukcji = dataPr;
                     _towar.DataPrzydatnosci = dataWaz;
                     if(combo_kraj.Text == "Brazylia")
