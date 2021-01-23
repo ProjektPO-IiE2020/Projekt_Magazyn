@@ -13,7 +13,7 @@
             <ColumnDefinition Width="166*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="button_IMPORT_dodaj" Content="Dodaj Produkty" HorizontalAlignment="Left" Height="81" Margin="41,84,0,0" VerticalAlignment="Top" Width="154" Click="button_IMPORT_dodaj_Click_1" />
-        <Button x:Name="button_IMPORT_znajdz" Content="Znajdź Produkty" HorizontalAlignment="Left" Height="81" Margin="41,256,0,0" VerticalAlignment="Top" Width="154" />
+        <Button x:Name="button_IMPORT_znajdz" Content="Znajdź Produkty" HorizontalAlignment="Left" Height="81" Margin="41,256,0,0" VerticalAlignment="Top" Width="154" Click="button_IMPORT_znajdz_Click" />
         <Button x:Name="button_IMPORT_usun" Content="Usuń Produkty" HorizontalAlignment="Left" Height="81" Margin="41,170,0,0" VerticalAlignment="Top" Width="154" Click="button_IMPORT_usun_Click" />
         <ListBox x:Name="listbox_IMPORT" HorizontalAlignment="Left" Height="253" Margin="1,104,0,0" VerticalAlignment="Top" Width="427" Grid.ColumnSpan="2" Grid.Column="1"/>
         <TextBox x:Name="text_IMPORT" Height="26" Margin="1,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Width="427"/>

@@ -126,6 +126,22 @@ namespace Magazyn
                 nowa.Reverse();
             _kolejkaImport = new Queue<TowarImport>(nowa);
         }
+        public void SortujPoDacieProdukcjiImport(bool f)
+        {
+            List<TowarImport> nowa = new List<TowarImport>(_kolejkaImport);
+            nowa.Sort((x, y) => x.DataProdukcji.CompareTo(y.DataProdukcji));
+            if (f)
+                nowa.Reverse();
+            _kolejkaImport = new Queue<TowarImport>(nowa);
+        }
+        public void SortujPoDaciePrzydatnosciImport(bool f)
+        {
+            List<TowarImport> nowa = new List<TowarImport>(_kolejkaImport);
+            nowa.Sort((x, y) => x.DataPrzydatnosci.CompareTo(y.DataPrzydatnosci));
+            if (f)
+                nowa.Reverse();
+            _kolejkaImport = new Queue<TowarImport>(nowa);
+        }
 
         public void ZapiszXMLImport(string nazwaPliku)
         {

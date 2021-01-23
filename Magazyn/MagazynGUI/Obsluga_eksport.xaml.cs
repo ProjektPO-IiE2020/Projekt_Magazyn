@@ -104,7 +104,7 @@ namespace MagazynGUI
 
         private void button_EKSPORT_znajdz_Click(object sender, RoutedEventArgs e)
         {
-            Search_Sort_Edit okno = new Search_Sort_Edit();
+            Sort_Eksport okno = new Sort_Eksport();
             bool? ret = okno.ShowDialog();
             
         }

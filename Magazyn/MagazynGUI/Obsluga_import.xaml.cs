@@ -21,7 +21,7 @@ namespace MagazynGUI
     /// </summary>
     public partial class Obsluga_import : Window
     {
-        MagazynImport _magazyn;
+        static internal  MagazynImport _magazyn;
         public Obsluga_import()
         {
             InitializeComponent();
@@ -99,6 +99,12 @@ namespace MagazynGUI
                 }
             }
             listbox_IMPORT.ItemsSource = new ObservableCollection<TowarImport>(znalezione);
+        }
+
+        private void button_IMPORT_znajdz_Click(object sender, RoutedEventArgs e)
+        {
+            Sort_Import okno = new Sort_Import();
+            bool? ret = okno.ShowDialog();
         }
     }
 }
