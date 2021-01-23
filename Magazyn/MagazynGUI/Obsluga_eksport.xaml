@@ -14,11 +14,11 @@
         <Button x:Name="button_EKSPORT_dodaj" Content="Dodaj Produkty" HorizontalAlignment="Left" Height="94" Margin="54,64,0,0" VerticalAlignment="Top" Width="154" Click="button_EKSPORT_dodaj_Click" />
         <Button x:Name="button_EKSPORT_znajdz" Content="Znajdź Produkty" HorizontalAlignment="Left" Height="97" Margin="54,260,0,0" VerticalAlignment="Top" Width="154" Click="button_EKSPORT_znajdz_Click" />
         <Button x:Name="button_EKSPORT_usun" Content="Usuń Produkty" HorizontalAlignment="Left" Height="92" Margin="54,163,0,0" VerticalAlignment="Top" Width="154" Click="button_EKSPORT_usun_Click" />
-        <ListBox x:Name="listbox_EKSPORT" HorizontalAlignment="Left" Height="253" Margin="236,104,0,0" VerticalAlignment="Top" Width="427" SelectionChanged="listbox_EKSPORT_SelectionChanged" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="text_EKSPORT" HorizontalAlignment="Left" Height="26" Margin="236,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="427" Grid.ColumnSpan="2" TextChanged="text_EKSPORT_TextChanged"/>
+        <ListBox x:Name="listbox_EKSPORT" HorizontalAlignment="Left" Height="253" Margin="236,104,0,0" VerticalAlignment="Top" Width="427" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="text_EKSPORT" HorizontalAlignment="Left" Height="26" Margin="236,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="427" Grid.ColumnSpan="2"/>
         <Button x:Name="button_EKSPORT_szukaj" Content="Szukaj" HorizontalAlignment="Left" Height="44" Margin="402.1,55,0,0" VerticalAlignment="Top" Width="93" Grid.Column="1" Click="button_EKSPORT_szukaj_Click"/>
         <Menu HorizontalAlignment="Stretch" Height="21"  VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
-            <MenuItem Header="Plik" Height="21" Width="100" Click="MenuItem_Click">
+            <MenuItem Header="Plik" Height="21" Width="100">
                 <MenuItem Header="Otwórz" HorizontalAlignment="Left" Height="33" Width="150" Click="MenuOtworz_Click" Margin="0,0,-50,0"/>
                 <MenuItem Header="Zapisz" HorizontalAlignment="Left" Height="33" Width="148" Click="MenuZapisz_Click" Margin="0,0,-48,0"/>
                 <MenuItem Header="Wyjdź" HorizontalAlignment="Left" Height="33" Width="146" Click="MenuWyjdz_Click" Margin="0,0,-46,0"/>

@@ -27,7 +27,10 @@ namespace Magazyn
         public int OstatniKod { get => _ostatniKod; set => _ostatniKod = value; }
         public string Kod { get => _kod; set => _kod = value; }
         public Kraje Kraj { get => _kraj; set => _kraj = value; }
-
+        static Towar()
+        {
+            _ostatniKod = 1000;
+        }
         public Towar()
         {
             ++_ostatniKod;
@@ -36,6 +39,7 @@ namespace Magazyn
             _cena = 0;
             _dataProdukcji = DateTime.MinValue;
             _dataProdukcji = DateTime.MinValue;
+            Kod = null;
             _kraj = Kraje.inny;
             
         }
@@ -51,7 +55,7 @@ namespace Magazyn
 
         public override string ToString()
         {
-            return $"{_nazwa}, {_typ} ({_cena:C}, data produkcji: {_dataProdukcji.ToShortDateString()}, data przydatności: {_dataPrzydatnosci.ToShortDateString()})";
+            return $"{_nazwa}, {_typ} ({_cena:C}, data produkcji: {_dataProdukcji.ToShortDateString()}, data przydatności: {_dataPrzydatnosci.ToShortDateString()}";
         }
 
         public int CompareTo(Towar other)

@@ -7,21 +7,26 @@
         mc:Ignorable="d"
         Title="Obsluga_import" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="225*"/>
+            <ColumnDefinition Width="401*"/>
+            <ColumnDefinition Width="166*"/>
+        </Grid.ColumnDefinitions>
         <Button x:Name="button_IMPORT_dodaj" Content="Dodaj Produkty" HorizontalAlignment="Left" Height="81" Margin="41,84,0,0" VerticalAlignment="Top" Width="154" Click="button_IMPORT_dodaj_Click_1" />
         <Button x:Name="button_IMPORT_znajdz" Content="Znajdź Produkty" HorizontalAlignment="Left" Height="81" Margin="41,256,0,0" VerticalAlignment="Top" Width="154" />
         <Button x:Name="button_IMPORT_usun" Content="Usuń Produkty" HorizontalAlignment="Left" Height="81" Margin="41,170,0,0" VerticalAlignment="Top" Width="154" Click="button_IMPORT_usun_Click" />
-        <ListBox x:Name="listbox_IMPORT" HorizontalAlignment="Left" Height="253" Margin="236,104,0,0" VerticalAlignment="Top" Width="427"/>
-        <TextBox x:Name="text_IMPORT" HorizontalAlignment="Left" Height="26" Margin="236,0,0,339" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="427"/>
-        <Button x:Name="button_IMPORT_szukaj" Content="Szukaj" HorizontalAlignment="Left" Height="44" Margin="668,55,0,0" VerticalAlignment="Top" Width="95" Click="button_IMPORT_szukaj_Click"/>
-        <Menu HorizontalAlignment="Stretch" Height="21"  VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
-            <MenuItem Header="Plik" Height="21" Width="100" Click="MenuItem_Click">
+        <ListBox x:Name="listbox_IMPORT" HorizontalAlignment="Left" Height="253" Margin="1,104,0,0" VerticalAlignment="Top" Width="427" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <TextBox x:Name="text_IMPORT" Height="26" Margin="1,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Width="427"/>
+        <Button x:Name="button_IMPORT_szukaj" Content="Szukaj" HorizontalAlignment="Left" Height="44" Margin="53,55,0,0" VerticalAlignment="Top" Width="95" Click="button_IMPORT_szukaj_Click" Grid.Column="2"/>
+        <Menu HorizontalAlignment="Stretch" Height="21"  VerticalAlignment="Top" Grid.ColumnSpan="3">
+            <MenuItem Header="Plik" Height="21" Width="100">
                 <MenuItem Header="Otwórz" HorizontalAlignment="Left" Height="33" Width="150" Click="MenuOtworz_Click" Margin="0,0,-50,0"/>
                 <MenuItem Header="Zapisz" HorizontalAlignment="Left" Height="33" Width="148" Click="MenuZapisz_Click" Margin="0,0,-48,0"/>
                 <MenuItem Header="Wyjdź" HorizontalAlignment="Left" Height="33" Width="146" Click="MenuWyjdz_Click" Margin="0,0,-46,0"/>
             </MenuItem>
         </Menu>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="236,34,0,0" TextWrapping="Wrap" Text=" Wyszukaj po nazwie:" VerticalAlignment="Top" Width="245"/>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="236,83,0,0" TextWrapping="Wrap" Text=" Towary:" VerticalAlignment="Top" Width="245"/>
-        <Button x:Name="button_IMPORT_odswiez" Content="Odswiez widok" HorizontalAlignment="Left" Margin="668,104,0,0" VerticalAlignment="Top" Width="95" Height="44" Click="button_IMPORT_odswiez_Click"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="1,34,0,0" TextWrapping="Wrap" Text=" Wyszukaj po nazwie:" VerticalAlignment="Top" Width="427" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="1,83,0,0" TextWrapping="Wrap" Text=" Towary:" VerticalAlignment="Top" Width="245" Grid.Column="1"/>
+        <Button x:Name="button_IMPORT_odswiez" Content="Odswiez widok" HorizontalAlignment="Left" Margin="53,104,0,0" VerticalAlignment="Top" Width="95" Height="44" Click="button_IMPORT_odswiez_Click" Grid.Column="2"/>
     </Grid>
 </Window>

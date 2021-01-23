@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MagazynGUI"
         mc:Ignorable="d"
-        Title="Dodaj_Towar" Height="411" Width="468">
+        Title="Dodaj Towar" Height="411" Width="468">
     <Grid Margin="0,0,2,-3">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200*"/>
