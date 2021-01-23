@@ -23,15 +23,19 @@ namespace MagazynGUI
         Towar _towar;
         public Dodaj_Towar()
         {
-
             InitializeComponent();
         }
 
-        public Dodaj_Towar(Towar t) : this()
+        public Dodaj_Towar(TowarEksport tE) : this()
         {
-            _towar = t;
+            _towar = tE;
         }
-        
+
+        public Dodaj_Towar(TowarImport tI) : this()
+        {
+            _towar = tI;
+        }
+
         private void btnAnuluj_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
@@ -56,7 +60,8 @@ namespace MagazynGUI
                     _towar.Cena = Convert.ToDouble(text_Cena.Text);
                     _towar.DataProdukcji = dataPr;
                     _towar.DataPrzydatnosci = dataWaz;
-                    if(combo_kraj.Text == "Brazylia")
+                    
+                    if (combo_kraj.Text == "Brazylia")
                     {
                         _towar.Kraj = Kraje.Brazylia;
                     }
@@ -113,7 +118,14 @@ namespace MagazynGUI
                     {
                         _towar.Typ = Typy.inne;
                     }
-
+                    if(_towar is TowarEksport)
+                    {
+                        _towar.Kod = $"{_towar.OstatniKod}/{_towar.Kraj.ToString().Substring(0, 3).ToUpper()}/EX";
+                    }
+                    else
+                    {
+                        _towar.Kod = $"{_towar.OstatniKod}/{_towar.Kraj.ToString().Substring(0, 3).ToUpper()}/IM";
+                    }
                     DialogResult = true; 
                 }
             }

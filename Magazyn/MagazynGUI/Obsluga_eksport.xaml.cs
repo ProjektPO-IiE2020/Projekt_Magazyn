@@ -81,20 +81,6 @@ namespace MagazynGUI
             Close();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void listbox_EKSPORT_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void text_EKSPORT_TextChanged(object sender, TextChangedEventArgs e)
-        {
-        }
-
         private void button_EKSPORT_szukaj_Click(object sender, RoutedEventArgs e)
         {
             string wyszukaj = text_EKSPORT.Text;

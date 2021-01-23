@@ -58,14 +58,15 @@ namespace MagazynGUI
             Close();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void button_IMPORT_usun_Click(object sender, RoutedEventArgs e)
         {
-
+            if (_magazyn is object && listbox_IMPORT.SelectedIndex > -1)
+            {
+                TowarImport ti = (TowarImport)listbox_IMPORT.SelectedItem;
+                _magazyn.UsunTowarImport(ti.Kod);
+                listbox_IMPORT.ItemsSource = new ObservableCollection<TowarImport>(_magazyn.KolejkaImport);
+            }
         }
 
         private void button_IMPORT_dodaj_Click_1(object sender, RoutedEventArgs e)

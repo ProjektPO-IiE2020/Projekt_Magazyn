@@ -19,6 +19,7 @@ namespace Magazyn
 
         public TowarImport() : base()
         {
+
         }
 
         public TowarImport(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci, Kraje kraj) : base(nazwa, typ, cena, dataProdukcji, dataPrzydatnosci, kraj)
@@ -30,7 +31,7 @@ namespace Magazyn
 
         public override string ToString()
         {
-            return $"{base.ToString()}, KOD: {Kod}, pochodzenie: {_kraj}";
+            return $"{base.ToString()}, KOD: {Kod}, pochodzenie: {_kraj})";
         }
     }
 }
