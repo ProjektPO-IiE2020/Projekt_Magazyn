@@ -21,7 +21,7 @@ namespace MagazynGUI
     /// </summary>
     public partial class Obsluga_eksport : Window
     {
-        MagazynEksport _magazyn;
+        static internal MagazynEksport _magazyn;
         public Obsluga_eksport()
         {
             InitializeComponent();
@@ -118,7 +118,9 @@ namespace MagazynGUI
 
         private void button_EKSPORT_znajdz_Click(object sender, RoutedEventArgs e)
         {
-
+            Search_Sort_Edit okno = new Search_Sort_Edit();
+            bool? ret = okno.ShowDialog();
+            
         }
     }
 }

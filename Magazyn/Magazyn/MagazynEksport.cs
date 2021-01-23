@@ -80,7 +80,6 @@ namespace Magazyn
             return f;
         }
 
-
         public List<TowarEksport> ZnajdzTowarEksport(Typy typ)
         {
             List<TowarEksport> lista = new List<TowarEksport>();
@@ -110,19 +109,32 @@ namespace Magazyn
             throw new TowarNotFoundException();
         }
 
-
         public void SortujPoCenieEksport()
         {
             List<TowarEksport> nowa = new List<TowarEksport>(_kolejkaEksport);
             nowa.Sort();
             _kolejkaEksport = new Queue<TowarEksport>(nowa);
         }
-
-
         public void SortujPoNazwieEksport(bool f)
         {
             List<TowarEksport> nowa = new List<TowarEksport>(_kolejkaEksport);
             nowa.Sort((x, y) => x.Nazwa.CompareTo(y.Nazwa));
+            if (f)
+                nowa.Reverse();
+            _kolejkaEksport = new Queue<TowarEksport>(nowa);
+        }
+        public void SortujPoDacieProdukcjiEksport(bool f)
+        {
+            List<TowarEksport> nowa = new List<TowarEksport>(_kolejkaEksport);
+            nowa.Sort((x, y) => x.DataProdukcji.CompareTo(y.DataProdukcji));
+            if (f)
+                nowa.Reverse();
+            _kolejkaEksport = new Queue<TowarEksport>(nowa);
+        }
+        public void SortujPoDaciePrzydatnosciEksport(bool f)
+        {
+            List<TowarEksport> nowa = new List<TowarEksport>(_kolejkaEksport);
+            nowa.Sort((x, y) => x.DataPrzydatnosci.CompareTo(y.DataPrzydatnosci));
             if (f)
                 nowa.Reverse();
             _kolejkaEksport = new Queue<TowarEksport>(nowa);
