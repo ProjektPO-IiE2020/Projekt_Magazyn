@@ -18,7 +18,7 @@ namespace Magazyn
             TowarEksport p2 = new TowarEksport("Długopis", Typy.inne, 0.99, "12.11.2020", "22.03.2021", Kraje.Hiszpania);
             TowarEksport p3 = new TowarEksport("Jabłka", Typy.owoce, 3.89, "03.03.2020", "08.02.2021", Kraje.Norwegia);
             TowarEksport p4 = new TowarEksport("Żelki Zozole", Typy.słodycze, 7.99, "24.10.2020", "12.09.2022", Kraje.Niemcy);
-            TowarEksport p5 = new TowarEksport("Antrykot", Typy.mięso, 0.99, "12.01.2021", "02.02.2020", Kraje.Niemcy);
+            TowarEksport p5 = new TowarEksport("Antrykot", Typy.mięso, 0.99, "12.01.2021", "22.01.2021", Kraje.Niemcy);
             TowarEksport p6 = new TowarEksport("Żel pod prysznic", Typy.chemia, 3.89, "04.06.2020", "16.02.2023", Kraje.Rosja);
             Console.WriteLine(p1);
             Console.WriteLine(p2);
