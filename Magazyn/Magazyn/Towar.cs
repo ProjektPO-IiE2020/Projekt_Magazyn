@@ -45,7 +45,6 @@ namespace Magazyn
         }
         public Towar(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci, Kraje kraj) : this()
         {
-            _kraj = kraj;
             _nazwa = nazwa;
             _typ = typ;
             _cena = cena;
