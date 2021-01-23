@@ -33,6 +33,63 @@ namespace MagazynGUI
             text_Cena.Text = _towar.Cena.ToString();
             text_DataProdukcji.Text = _towar.DataProdukcji.ToString("dd.MM.yyyy");
             text_DataWaznosci.Text = _towar.DataPrzydatnosci.ToString("dd.MM.yyyy");
+            if (_towar.Kraj == Kraje.Brazylia)
+            {
+                combo_kraj.SelectedIndex = 0;
+            }
+            else if (_towar.Kraj == Kraje.Norwegia)
+            {
+                combo_kraj.SelectedIndex = 1;
+            }
+            else if (_towar.Kraj == Kraje.Egipt)
+            {
+                combo_kraj.SelectedIndex = 2;
+            }
+            else if (_towar.Kraj == Kraje.Rosja)
+            {
+                combo_kraj.SelectedIndex = 3;
+            }
+            else if (_towar.Kraj == Kraje.Niemcy)
+            {
+                combo_kraj.SelectedIndex = 4;
+            }
+            else if (_towar.Kraj == Kraje.Hiszpania)
+            {
+                combo_kraj.SelectedIndex = 5;
+            }
+            else if (_towar.Kraj == Kraje.inny)
+            {
+                combo_kraj.SelectedIndex = 6;
+            }
+
+            if (_towar.Typ == Typy.napoje)
+            {
+                combo_typ.SelectedIndex = 0;
+            }
+            else if (_towar.Typ == Typy.warzywa)
+            {
+                combo_typ.SelectedIndex = 1;
+            }
+            else if (_towar.Typ == Typy.owoce)
+            {
+                combo_typ.SelectedIndex = 2;
+            }
+            else if (_towar.Typ == Typy.mięso)
+            {
+                combo_typ.SelectedIndex = 3;
+            }
+            else if (_towar.Typ == Typy.słodycze)
+            {
+                combo_typ.SelectedIndex = 4;
+            }
+            else if (_towar.Typ == Typy.chemia)
+            {
+                combo_typ.SelectedIndex = 5;
+            }
+            else if (_towar.Typ == Typy.inne)
+            {
+                combo_typ.SelectedIndex = 6;
+            }
         }
 
         public Dodaj_Towar(TowarImport tI) : this()
