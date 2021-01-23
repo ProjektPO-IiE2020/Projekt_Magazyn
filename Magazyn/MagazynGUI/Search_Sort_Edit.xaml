@@ -10,7 +10,7 @@
         <ListBox x:Name="listbox_Search_Sort" HorizontalAlignment="Left" Height="269" Margin="385,74,0,0" VerticalAlignment="Top" Width="361"/>
         <Button x:Name="btn_Wyszukaj" Content="Wyszukaj" HorizontalAlignment="Left" Height="54" Margin="207,133,0,0" VerticalAlignment="Top" Width="163"/>
         <Button Content="Znajdź przeterminowane produkty" HorizontalAlignment="Left" Height="54" Margin="78,210,0,0" VerticalAlignment="Top" Width="197"/>
-        <Button Content="Edytuj" HorizontalAlignment="Left" Height="54" Margin="78,289,0,0" VerticalAlignment="Top" Width="197"/>
+        <Button x:Name="btn_Edytuj" Content="Edytuj" HorizontalAlignment="Left" Height="54" Margin="78,289,0,0" VerticalAlignment="Top" Width="197" Click="btn_Edytuj_Click" />
         <ComboBox x:Name="combo_sortowanie" HorizontalAlignment="Left" Height="54" Margin="10,47,0,0" VerticalAlignment="Top" Width="197">
             <ComboBoxItem x:Name="sort_name">Sortuj po nazwie</ComboBoxItem>
             <ComboBoxItem x:Name="sort_dataPr">Sortuj po dacie produkcji</ComboBoxItem>

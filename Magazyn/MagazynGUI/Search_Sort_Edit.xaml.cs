@@ -22,6 +22,7 @@ namespace MagazynGUI
     /// </summary>
     public partial class Search_Sort_Edit : Window
     {
+        Towar _towar;
         public Search_Sort_Edit()
         {
             InitializeComponent();
@@ -54,6 +55,16 @@ namespace MagazynGUI
             if (combo_sortowanie.Text == "Sortuj po cenie")
             {
                 Obsluga_eksport._magazyn.SortujPoCenieEksport();
+                listbox_Search_Sort.ItemsSource = new ObservableCollection<TowarEksport>(Obsluga_eksport._magazyn.KolejkaEksport);
+            }
+        }
+
+        private void btn_Edytuj_Click(object sender, RoutedEventArgs e)
+        {
+            if (listbox_Search_Sort.SelectedIndex > -1)
+            {
+                Dodaj_Towar okno = new Dodaj_Towar((TowarEksport)listbox_Search_Sort.SelectedItem);
+                okno.ShowDialog();
                 listbox_Search_Sort.ItemsSource = new ObservableCollection<TowarEksport>(Obsluga_eksport._magazyn.KolejkaEksport);
             }
         }

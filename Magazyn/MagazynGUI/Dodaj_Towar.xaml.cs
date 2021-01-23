@@ -29,11 +29,19 @@ namespace MagazynGUI
         public Dodaj_Towar(TowarEksport tE) : this()
         {
             _towar = tE;
+            text_Nazwa.Text = _towar.Nazwa;
+            text_Cena.Text = _towar.Cena.ToString();
+            text_DataProdukcji.Text = _towar.DataProdukcji.ToString("dd.MM.yyyy");
+            text_DataWaznosci.Text = _towar.DataPrzydatnosci.ToString("dd.MM.yyyy");
         }
 
         public Dodaj_Towar(TowarImport tI) : this()
         {
             _towar = tI;
+            text_Nazwa.Text = _towar.Nazwa;
+            text_Cena.Text = _towar.Cena.ToString();
+            text_DataProdukcji.Text = _towar.DataProdukcji.ToString("dd.MM.yyyy");
+            text_DataWaznosci.Text = _towar.DataPrzydatnosci.ToString("dd.MM.yyyy");
         }
 
         private void btnAnuluj_Click(object sender, RoutedEventArgs e)
