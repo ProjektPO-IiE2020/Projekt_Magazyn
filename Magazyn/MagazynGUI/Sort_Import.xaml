@@ -14,7 +14,7 @@
         <ListBox x:Name="listbox_Sort_Import" HorizontalAlignment="Left" Height="269" Margin="261.184,74,0,0" VerticalAlignment="Top" Width="361" Grid.Column="1"/>
         <Button x:Name="btn_Wyszukaj_Import" Content="Wyszukaj" HorizontalAlignment="Left" Height="25" Margin="97,127,0,0" VerticalAlignment="Top" Width="137" Grid.Column="1" Click="btn_Wyszukaj_Import_Click"/>
         <Button x:Name="btn_Termin_Import" Content="Znajdź przeterminowane produkty" HorizontalAlignment="Left" Height="54" Margin="78,210,0,0" VerticalAlignment="Top" Width="197" Grid.ColumnSpan="2" Click="btn_Termin_Import_Click"/>
-        <Button Content="Edytuj" HorizontalAlignment="Left" Height="54" Margin="78,289,0,0" VerticalAlignment="Top" Width="197" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn_Edytuj" Content="Edytuj" HorizontalAlignment="Left" Height="54" Margin="78,289,0,0" VerticalAlignment="Top" Width="197" Grid.ColumnSpan="2" Click="btn_Edytuj_Click"/>
         <ComboBox x:Name="combo_Sort_Import" HorizontalAlignment="Left" Height="28" Margin="12,71,0,0" VerticalAlignment="Top" Width="197" Grid.ColumnSpan="2">
             <ComboBoxItem x:Name="sort_name">Sortuj po nazwie</ComboBoxItem>
             <ComboBoxItem x:Name="sort_dataPr">Sortuj po dacie produkcji</ComboBoxItem>

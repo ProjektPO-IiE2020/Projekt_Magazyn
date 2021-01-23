@@ -87,5 +87,15 @@ namespace MagazynGUI
             }
             listbox_Sort_Eksport.ItemsSource = new ObservableCollection<TowarEksport>(znalezione);
         }
+
+        private void btn_Edytuj_Click(object sender, RoutedEventArgs e)
+        {
+            if (listbox_Sort_Eksport.SelectedIndex > -1)
+            {
+                Dodaj_Towar okno = new Dodaj_Towar((TowarEksport)listbox_Sort_Eksport.SelectedItem);
+                okno.ShowDialog();
+                listbox_Sort_Eksport.ItemsSource = new ObservableCollection<TowarEksport>(Obsluga_eksport._magazyn.KolejkaEksport);
+            }
+        }
     }
 }

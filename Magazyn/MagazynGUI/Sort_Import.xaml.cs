@@ -7,17 +7,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -95,6 +86,16 @@ namespace MagazynGUI
                 }
             }
             listbox_Sort_Import.ItemsSource = new ObservableCollection<TowarImport>(znalezione);
+        }
+
+        private void btn_Edytuj_Click(object sender, RoutedEventArgs e)
+        {
+            if (listbox_Sort_Import.SelectedIndex > -1)
+            {
+                Dodaj_Towar okno = new Dodaj_Towar((TowarImport)listbox_Sort_Import.SelectedItem);
+                okno.ShowDialog();
+                listbox_Sort_Import.ItemsSource = new ObservableCollection<TowarImport>(Obsluga_import._magazyn.KolejkaImport);
+            }
         }
     }
 }
