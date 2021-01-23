@@ -97,6 +97,7 @@ namespace Magazyn
             MagazynImport ls4 = new MagazynImport();
             Console.WriteLine();
             Console.WriteLine("Kopiowanie");
+            ls1 = eksport;
             ls3 = (MagazynEksport)ls1.CloneEksport();
             Console.WriteLine(ls3.ToString());
             Console.WriteLine();

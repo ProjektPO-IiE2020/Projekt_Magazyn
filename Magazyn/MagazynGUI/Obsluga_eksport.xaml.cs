@@ -35,13 +35,13 @@ namespace MagazynGUI
             if (ret == true)
             {
                 _magazyn.UmiescEksport(t);
-                listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.KolejkaEksport);// odświeżamy listę do wyświetlenia
+                listbox_EKSPORT.ItemsSource = new ObservableCollection<TowarEksport>(_magazyn.KolejkaEksport);
             }
         }
 
         private void button_EKSPORT_usun_Click(object sender, RoutedEventArgs e)
         {
-            if (_magazyn is object && listbox_EKSPORT.SelectedIndex > -1) // spr czy wybralismy jakis element
+            if (_magazyn is object && listbox_EKSPORT.SelectedIndex > -1)
             {
                 TowarEksport te = (TowarEksport)listbox_EKSPORT.SelectedItem;
                 _magazyn.UsunTowarEksport(te.Kod);
