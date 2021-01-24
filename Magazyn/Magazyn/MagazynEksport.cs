@@ -21,7 +21,7 @@ namespace Magazyn
         public string Nazwa { get => nazwa; set => nazwa = value; }
 
         /// <summary>
-        /// Niżej znajdują się funkcje niezbędne do obsługi magazynu towarów importowych
+        /// Niżej znajdują się funkcje niezbędne do obsługi magazynu towarów eksportowych
         /// </summary>
         public MagazynEksport()
         {
@@ -38,7 +38,7 @@ namespace Magazyn
         /// <summary>
         /// Funkcja "UmieśćEksport" pozwala na dodanie do magazynu towaru eksportowego
         /// </summary>
-        /// <param name="t">dodawany towar</param>
+        /// <param name="t">Dodawany towar</param>
         public void UmiescEksport(TowarEksport t)
         {
             _kolejkaEksport.Enqueue(t);
@@ -85,7 +85,7 @@ namespace Magazyn
         /// Funkcja "UsunTowarEksport" pozwala na usunięcie danego towaru eksportowego po podaniu jego kodu
         /// </summary>
         /// <param name="kod">kod produktu eksportowego, ktory chcemy usunąć</param>
-        /// <returns></returns>
+        /// <returns>Jeśli towar był w magazynie i został usunięty zwraca prawdę, jeśli nie-fałsz</returns>
         public bool UsunTowarEksport(string kod)
         {
             Queue<TowarEksport> nowa = new Queue<TowarEksport>();
@@ -149,7 +149,7 @@ namespace Magazyn
         /// <summary>
         /// Funkcja sortująca towary importowe po nazwie (alfabetycznie)
         /// </summary>
-        /// <param name="f"></param>
+        /// <param name="f">Odwracanie kolejności z powodu specyfikacji kolekcji kolejki</param>
         public void SortujPoNazwieEksport(bool f)
         {
             List<TowarEksport> nowa = new List<TowarEksport>(_kolejkaEksport);
@@ -161,7 +161,7 @@ namespace Magazyn
         /// <summary>
         /// Funkcja sortująca towary eksportowe po dacie produkcji (od najwcześniej wypordukowanego)
         /// </summary>
-        /// <param name="f"></param>
+        /// <param name="f">Odwracanie kolejności z powodu specyfikacji kolekcji kolejki</param>
         public void SortujPoDacieProdukcjiEksport(bool f)
         {
             List<TowarEksport> nowa = new List<TowarEksport>(_kolejkaEksport);
@@ -173,7 +173,7 @@ namespace Magazyn
         /// <summary>
         /// Funkcja sortująca towary eksportowe po dacie ważności w celu wydania produktów z magazynu w oparciu o zasadę FIFO
         /// </summary>
-        /// <param name="f"></param>
+        /// <param name="f">Odwracanie kolejności z powodu specyfikacji kolekcji kolejki</param>
         public void SortujPoDaciePrzydatnosciEksport(bool f)
         {
             List<TowarEksport> nowa = new List<TowarEksport>(_kolejkaEksport);
@@ -216,7 +216,7 @@ namespace Magazyn
             return m;
         }
         /// <summary>
-        /// Funkjca służąca klonowaniu listy towarów eksportowych
+        /// Funkcja służąca klonowaniu listy towarów eksportowych
         /// </summary>
         /// <returns>Skolnowana lista towarów eksportowych</returns>
         public object CloneEksport()
