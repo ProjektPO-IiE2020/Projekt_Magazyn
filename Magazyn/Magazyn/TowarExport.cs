@@ -22,7 +22,6 @@ namespace Magazyn
 
         public TowarEksport(string nazwa, Typy typ, double cena, string dataProdukcji, string dataPrzydatnosci, Kraje kraj) : base(nazwa, typ, cena, dataProdukcji, dataPrzydatnosci, kraj)
         {
-            Kraj = kraj;
             Kod = $"{++_doKodu}/{kraj.ToString().Substring(0, 3).ToUpper()}/EX";
         }
 

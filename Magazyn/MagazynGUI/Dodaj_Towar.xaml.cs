@@ -32,7 +32,8 @@ namespace MagazynGUI
             text_Nazwa.Text = _towar.Nazwa;
             text_Cena.Text = _towar.Cena.ToString();
             text_DataProdukcji.Text = _towar.DataProdukcji.ToString("dd.MM.yyyy");
-            text_DataWaznosci.Text = _towar.DataPrzydatnosci.ToString("dd.MM.yyyy");
+            text_DataWaznosci.Text = _towar.DataPrzydatnosci.ToString("dd.MM.yyyy"); 
+            
             if (_towar.Kraj == Kraje.Brazylia)
             {
                 combo_kraj.SelectedIndex = 0;
@@ -113,16 +114,33 @@ namespace MagazynGUI
                 string[] formatDaty = { "dd.MM.yyyy" };
                 DateTime.TryParseExact(text_DataProdukcji.Text, formatDaty, null, System.Globalization.DateTimeStyles.None, out DateTime dataPr);
                 DateTime.TryParseExact(text_DataWaznosci.Text, formatDaty, null, System.Globalization.DateTimeStyles.None, out DateTime dataWaz);
+                _towar.Cena = Convert.ToDouble(text_Cena.Text);
+
+                double cenaPom = Convert.ToDouble(_towar.Cena);
+                if (cenaPom < 0)
+                {
+                    string message = "Cena nie może być ujemna!";
+                    string title = "Niepoprawna cena";
+                    System.Windows.MessageBox.Show(message, title, MessageBoxButton.OK);
+                    return;
+                }
+                if (dataPr > dataWaz)
+                {
+                    string message = "Data przydatności nie powinna być datą wcześniejszą niż data produkcji";
+                    string title = "Niepoprawne dane";
+                    System.Windows.MessageBox.Show(message, title, MessageBoxButton.OK);
+                    return;
+                }
                 if (dataPr.Year == 1 || dataWaz.Year == 1)
                 {
-                    string message = "Data urodzenia powinna zostać wpisana w formacie dd.MM.yyyy";
+                    string message = "Data powinna zostać wpisana w formacie dd.MM.yyyy";
                     string title = "Niepoprawny format daty";
                     System.Windows.MessageBox.Show(message, title, MessageBoxButton.OK);
+                    return;
                 }
                 else
                 {
                     _towar.Nazwa = text_Nazwa.Text;
-                    _towar.Cena = Convert.ToDouble(text_Cena.Text);
                     _towar.DataProdukcji = dataPr;
                     _towar.DataPrzydatnosci = dataWaz;
                     
