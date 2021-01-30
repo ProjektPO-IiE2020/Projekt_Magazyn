@@ -143,12 +143,12 @@ namespace MagazynGUI
                     _towar.Nazwa = text_Nazwa.Text;
                     _towar.DataProdukcji = dataPr;
                     _towar.DataPrzydatnosci = dataWaz;
-                    
+
                     if (combo_kraj.Text == "Brazylia")
                     {
                         _towar.Kraj = Kraje.Brazylia;
                     }
-                    else if(combo_kraj.Text == "Egipt")
+                    else if (combo_kraj.Text == "Egipt")
                     {
                         _towar.Kraj = Kraje.Egipt;
                     }
@@ -201,7 +201,7 @@ namespace MagazynGUI
                     {
                         _towar.Typ = Typy.inne;
                     }
-                    if(_towar is TowarEksport)
+                    if (_towar is TowarEksport)
                     {
                         _towar.Kod = $"{_towar.OstatniKod}/{_towar.Kraj.ToString().Substring(0, 3).ToUpper()}/EX";
                     }
@@ -209,7 +209,8 @@ namespace MagazynGUI
                     {
                         _towar.Kod = $"{_towar.OstatniKod}/{_towar.Kraj.ToString().Substring(0, 3).ToUpper()}/IM";
                     }
-                    DialogResult = true; 
+                    DialogResult = true;
+
                 }
             }
         }

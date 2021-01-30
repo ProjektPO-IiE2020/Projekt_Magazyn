@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Magazyn</name>
+    </assembly>
+    <members>
+        <member name="M:Magazyn.MagazynEksport.#ctor">
+            <summary>
+            Niżej znajdują się funkcje niezbędne do obsługi magazynu towarów eksportowych
+            </summary>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.UmiescEksport(Magazyn.TowarEksport)">
+            <summary>
+            Funkcja "UmieśćEksport" pozwala na dodanie do magazynu towaru eksportowego
+            </summary>
+            <param name="t">Dodawany towar</param>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.PobierzEksport">
+            <summary>
+            Funkcja "PobierzEksport" pozwala na pobranie aktualnej listy towarów
+            </summary>
+            <returns>Zwraca listę towarów eksportowych znajdujących sie w magazynie</returns>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.WyczyscEksport">
+            <summary>
+            Funkcja "WyczyśćEksport" usuwa wszystkie towary eksportowe z magazynu
+            </summary>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.PodajIloscEksport">
+            <summary>
+            Funkcja "PodajIloscEksport" pozwala sprawdzić ile znajduje się towarów eksportowych w magazynie
+            </summary>
+            <returns>Ilość towarów eksportowych w magazynie</returns>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.PodajBiezacyEksport">
+            <summary>
+            Funkcja "PodajBiezacyEksport" pokazuje który produkt jest najdłużej w magazynie 
+            </summary>
+            <returns>Pierwszy produkt w kolejce towarów eksportowych</returns>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.UsunTowarEksport(System.String)">
+            <summary>
+            Funkcja "UsunTowarEksport" pozwala na usunięcie danego towaru eksportowego po podaniu jego kodu
+            </summary>
+            <param name="kod">kod produktu eksportowego, ktory chcemy usunąć</param>
+            <returns>Jeśli towar był w magazynie i został usunięty zwraca prawdę, jeśli nie-fałsz</returns>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.ZnajdzTowarEksport(Magazyn.Typy)">
+            <summary>
+            Funkcja "ZnajdzTowarEksport" pozwala na wyszukanie produktów o wskazanym typie np. słodycze, mięso etc
+            </summary>
+            <param name="typ">Typ produktów, które chcemy wyświetlić</param>
+            <returns>Lista towarów eksportowych o podanym typie</returns>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.ZnajdzTowarEksport(System.String)">
+            <summary>
+            Funkcja "ZnajdzTowarEksport" pozwala na sprawdzenie i wyszukanie towaru po podaniu jego kodu
+            </summary>
+            <param name="kod">Kod szukanego towaru</param>
+            <returns>Poszukiwany towar lub informacja o braku sprawdzanego towaru w magazynie</returns>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.SortujPoCenieEksport">
+            <summary>
+            Funkcja sortująca towary eksportowe po cenie (rosnąco)
+            </summary>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.SortujPoNazwieEksport(System.Boolean)">
+            <summary>
+            Funkcja sortująca towary importowe po nazwie (alfabetycznie)
+            </summary>
+            <param name="f">Odwracanie kolejności z powodu specyfikacji kolekcji kolejki</param>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.SortujPoDacieProdukcjiEksport(System.Boolean)">
+            <summary>
+            Funkcja sortująca towary eksportowe po dacie produkcji (od najwcześniej wypordukowanego)
+            </summary>
+            <param name="f">Odwracanie kolejności z powodu specyfikacji kolekcji kolejki</param>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.SortujPoDaciePrzydatnosciEksport(System.Boolean)">
+            <summary>
+            Funkcja sortująca towary eksportowe po dacie ważności w celu wydania produktów z magazynu w oparciu o zasadę FIFO
+            </summary>
+            <param name="f">Odwracanie kolejności z powodu specyfikacji kolekcji kolejki</param>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.ZapiszXMLEksport(System.String)">
+            <summary>
+            Funkcja umożliwiająca zapis listy towarów eksportowych do XML
+            </summary>
+            <param name="nazwaPliku">zapisany plik z listą towarów eksportowych</param>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.OdczytajXMLEksport(System.String)">
+            <summary>
+            Funkcja służąca to otwarcia zapisanego pliku XML
+            </summary>
+            <param name="nazwaPliku">otwierany plik</param>
+            <returns>Lista towarów eksportowych</returns>
+        </member>
+        <member name="M:Magazyn.MagazynEksport.CloneEksport">
+            <summary>
+            Funkcja służąca klonowaniu listy towarów eksportowych
+            </summary>
+            <returns>Skolnowana lista towarów eksportowych</returns>
+        </member>
+        <member name="M:Magazyn.MagazynImport.#ctor">
+            <summary>
+            Niżej znajdują się funkcje niezbędne do obsługi magazynu towarów importowych
+            </summary>
+        </member>
+        <member name="M:Magazyn.MagazynImport.UmiescImport(Magazyn.TowarImport)">
+            <summary>
+            Funkcja "UmieśćImport" pozwala na dodanie do magazynu towaru importowego
+            </summary>
+            <param name="t">dodawany towar</param>
+        </member>
+        <member name="M:Magazyn.MagazynImport.PobierzImport">
+            <summary>
+            Funkcja "PobierzImport" pozwala na pobranie aktualnej listy towarów
+            </summary>
+            <returns>Zwraca listę towarów importowych znajdujących sie w magazynie</returns>
+        </member>
+        <member name="M:Magazyn.MagazynImport.WyczyscImport">
+            <summary>
+            Funkcja "WyczyśćImport" usuwa wszystkie towary importowe z magazynu 
+            </summary>
+        </member>
+        <member name="M:Magazyn.MagazynImport.PodajIloscImport">
+            <summary>
+            Funkcja "PodajIloscImport" pozwala sprawdzić ile znajduje się towarów impotowych w magazynie
+            </summary>
+            <returns>Ilość towarów importowych w magazynie</returns>
+        </member>
+        <member name="M:Magazyn.MagazynImport.PodajBiezacyImport">
+            <summary>
+            Funkcja "PodajBiezacyImport" pokazuje który produkt jest najdłużej w magazynie 
+            </summary>
+            <returns>Pierwszy produkt w kolejce towarów importowych</returns>
+        </member>
+        <member name="M:Magazyn.MagazynImport.UsunTowarImport(System.String)">
+            <summary>
+            Funkcja "UsunTowarImport" pozwala na usunięcie danego towaru importowego po podaniu jego kodu
+            </summary>
+            <param name="kod">kod produktu importowego, ktory chcemy usunąć</param>
+            <returns>Jeśli towar był w magazynie i został usunięty zwraca prawdę, jeśli nie-fałsz</returns>
+        </member>
+        <member name="M:Magazyn.MagazynImport.ZnajdzTowarImport(Magazyn.Typy)">
+            <summary>
+            Funkcja "ZnajdzTowarImport" pozwala na wyszukanie produktów o wskazanym typie np. słodycze, mięso etc
+            </summary>
+            <param name="typ">Typ produktów, które chcemy wyświetlić</param>
+            <returns>Lista towarów importowych o podanym typie</returns>
+        </member>
+        <member name="M:Magazyn.MagazynImport.ZnajdzTowarImport(System.String)">
+            <summary>
+            Funkcja "ZnajdzTowarImport" pozwala na sprawdzenie i wyszukanie towaru po podaniu jego kodu
+            </summary>
+            <param name="kod">Kod szukanego towaru</param>
+            <returns>Poszukiwany towar lub informacja o braku sprawdzanego towaru w magazynie</returns>
+        </member>
+        <member name="M:Magazyn.MagazynImport.SortujPoCenieImport">
+            <summary>
+            Funkcja sortująca towary importowe po cenie (rosnąco)
+            </summary>
+        </member>
+        <member name="M:Magazyn.MagazynImport.SortujPoNazwieImport(System.Boolean)">
+            <summary>
+            Funkcja sortująca towary importowe po nazwie (alfabetycznie)
+            </summary>
+            <param name="f">Odwracanie kolejności z powodu specyfikacji kolekcji kolejki</param>
+        </member>
+        <member name="M:Magazyn.MagazynImport.SortujPoDacieProdukcjiImport(System.Boolean)">
+            <summary>
+            Funkcja sortująca towary importowe po dacie produkcji (od najwcześniej wypordukowanego)
+            </summary>
+            <param name="f">Odwracanie kolejności z powodu specyfikacji kolekcji kolejki</param>
+        </member>
+        <member name="M:Magazyn.MagazynImport.SortujPoDaciePrzydatnosciImport(System.Boolean)">
+            <summary>
+            Funkcja sortująca towary importowe po dacie ważności w celu wydania produktów z magazynu w oparciu o zasadę FIFO
+            </summary>
+            <param name="f">Odwracanie kolejności z powodu specyfikacji kolekcji kolejki</param>
+        </member>
+        <member name="M:Magazyn.MagazynImport.ZapiszXMLImport(System.String)">
+            <summary>
+            Funkcja umożliwiająca zapis listy towarów importowych do XML
+            </summary>
+            <param name="nazwaPliku">zapisany plik z listą towarów importowych</param>
+        </member>
+        <member name="M:Magazyn.MagazynImport.OdczytajXMLImport(System.String)">
+            <summary>
+            Funkcja służąca to otwarcia zapisanego pliku XML
+            </summary>
+            <param name="nazwaPliku">otwierany plik</param>
+            <returns>Lista towarów importowych</returns>
+        </member>
+        <member name="M:Magazyn.MagazynImport.CloneImport">
+            <summary>
+            Funkcja służąca klonowaniu listy towarów importowych
+            </summary>
+            <returns>Sklonowana lista</returns>
+        </member>
+    </members>
+</doc>

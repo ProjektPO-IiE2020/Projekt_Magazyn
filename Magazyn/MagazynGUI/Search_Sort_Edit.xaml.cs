@@ -66,6 +66,7 @@ namespace MagazynGUI
                 Dodaj_Towar okno = new Dodaj_Towar((TowarEksport)listbox_Search_Sort.SelectedItem);
                 okno.ShowDialog();
                 listbox_Search_Sort.ItemsSource = new ObservableCollection<TowarEksport>(Obsluga_eksport._magazyn.KolejkaEksport);
+                zmiany = true;
             }
         }
     }
