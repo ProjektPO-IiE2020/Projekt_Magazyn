@@ -47,17 +47,9 @@ namespace Magazyn
         {
             _nazwa = nazwa;
             _typ = typ;
-            if (cena < 0)
-            {
-                throw new FormatException();
-            }
             _cena = cena;
             DateTime.TryParseExact(dataProdukcji, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy", "dd.MM.yyyy" }, null, DateTimeStyles.None, out _dataProdukcji);
             DateTime.TryParseExact(dataPrzydatnosci, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy", "dd.MM.yyyy" }, null, DateTimeStyles.None, out _dataPrzydatnosci);
-            if (_dataPrzydatnosci < _dataProdukcji)
-            {
-                Console.WriteLine("Data produkcji nie może być późniejsza niż data ważności");
-            }
         }
 
         public override string ToString()
